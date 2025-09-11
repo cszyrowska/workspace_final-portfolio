@@ -1,0 +1,410 @@
+<!-- CODE SNAPSHOT START -->
+# Code Repository Snapshot: react-portfolio-final
+*Generated from: C:\Users\cszyr\workspace_final-portfolio\react-portfolio-final*
+
+**Summary:** 10 files total, 10 included, 0 omitted
+
+## Directory Structure
+```
+react-portfolio-final
+├── eslint.config.js
+├── index.html
+├── package.json
+├── src
+│   ├── App.jsx
+│   ├── assets
+│   ├── components
+│   │   ├── Home.jsx
+│   │   └── Intro.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── styles
+│       └── Intro.css
+└── vite.config.js
+```
+
+## File Contents
+### Source Code Files
+
+**`eslint.config.js`** *(29 lines)*
+```javascript
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs['recommended-latest'],
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+    },
+  },
+])
+
+```
+
+**`vite.config.js`** *(7 lines)*
+```javascript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+
+```
+
+### Configuration Files
+
+**`package.json`** *(27 lines)*
+```json
+{
+  "name": "react-portfolio-final",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.1.2"
+  }
+}
+
+```
+
+### Other Files
+
+**`index.html`** *(13 lines)*
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+```
+
+**`src\App.jsx`** *(14 lines)*
+```jsx
+import { useState } from 'react'
+import Intro from './components/Intro.jsx'
+import Home from './components/Home.jsx'
+
+export default function App() {
+  const [showIntro, setShowIntro] = useState(true)
+
+  return (
+    <>
+      {showIntro && <Intro onFinish={() => setShowIntro(false)} />}
+      {!showIntro && <Home />}
+    </>
+  )
+}
+
+```
+
+**`src\index.css`** *(15 lines)*
+```css
+/* Minimal base styles so our intro covers the viewport cleanly */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #0f1115;      /* cosy dark backdrop for the intro */
+  color: #e8e8ea;
+}
+
+```
+
+**`src\main.jsx`** *(10 lines)*
+```jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+```
+
+**`src\components\Home.jsx`** *(25 lines)*
+```jsx
+export default function Home() {
+  return (
+    <main style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(180deg, #12141a, #1b1f29)',
+      display: 'grid',
+      placeItems: 'center',
+      padding: '4rem',
+    }}>
+      <div style={{
+        maxWidth: 900,
+        textAlign: 'center',
+        lineHeight: 1.6
+      }}>
+        <h1 style={{ marginTop: 0, fontSize: 'clamp(2rem, 5vw, 4rem)' }}>
+          Cecylia Szyrowska — Portfolio
+        </h1>
+        <p>
+          This is your main website content. Scroll and build out your sections later.
+          For now, we’re only focusing on the intro animation.
+        </p>
+      </div>
+    </main>
+  )
+}
+
+```
+
+**`src\components\Intro.jsx`** *(68 lines)*
+```jsx
+import { useEffect, useRef } from 'react'
+import '../styles/intro.css'
+
+/** Simple inline lantern SVG so you don’t need image files */
+function Lantern({ delay = 0, x = '25%' }) {
+  const style = {
+    left: x,
+    animationDelay: `${delay}ms`,
+  }
+  return (
+    <div className="lantern" style={style} aria-hidden="true">
+      {/* string */}
+      <div className="string" />
+      {/* body (SVG) */}
+      <svg viewBox="0 0 60 90" className="lantern-svg">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#ffd89b" stopOpacity="1"/>
+            <stop offset="100%" stopColor="#ff9f68" stopOpacity="0.1"/>
+          </radialGradient>
+        </defs>
+        {/* glow */}
+        <ellipse cx="30" cy="45" rx="28" ry="32" fill="url(#glow)" opacity="0.6"/>
+        {/* frame */}
+        <rect x="10" y="18" width="40" height="54" rx="10" fill="#2a2f3a" stroke="#f0c27b" strokeWidth="2"/>
+        {/* inner paper */}
+        <rect x="14" y="22" width="32" height="46" rx="8" fill="#f7e3b1"/>
+        {/* flame */}
+        <path d="M30 46c0-6 6-10 6-16c0-4-3-7-6-7s-6 3-6 7c0 6 6 10 6 16z" fill="#ffb347" />
+      </svg>
+    </div>
+  )
+}
+
+export default function Intro({ onFinish }) {
+  const overlayRef = useRef(null)
+
+  useEffect(() => {
+    // If reduced motion, skip animation.
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) {
+      onFinish?.()
+      return
+    }
+
+    // Total timeline: ~3800ms (drop + wind + push)
+    const totalMs = 3800
+    const t = setTimeout(() => onFinish?.(), totalMs)
+
+    return () => clearTimeout(t)
+  }, [onFinish])
+
+  return (
+    <div ref={overlayRef} className="intro-overlay">
+      {/* 4 lanterns dropping with slight stagger */}
+      <Lantern x="20%" delay={0} />
+      <Lantern x="38%" delay={200} />
+      <Lantern x="56%" delay={400} />
+      <Lantern x="74%" delay={600} />
+
+      {/* wind sweep element */}
+      <div className="wind" />
+
+      {/* title (optional, soft) */}
+      <h1 className="intro-title">Cecylia Szyrowska</h1>
+    </div>
+  )
+}
+
+```
+
+**`src\styles\Intro.css`** *(119 lines)*
+```css
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 50% 20%, #1b2230 0%, #0f1115 60%, #0a0c10 100%);
+  overflow: hidden;
+  z-index: 9999;
+
+  /* Final push off-screen after wind completes */
+  animation: intro-push 600ms ease-in-out forwards;
+  animation-delay: 3200ms; /* starts after wind ends */
+}
+
+/* Lanterns container pieces */
+.lantern {
+  position: absolute;
+  top: -140px; /* start off-screen */
+  transform: translateY(-120%);
+  animation: lantern-drop 1000ms cubic-bezier(.2,.7,.15,1) forwards;
+  /* each lantern sets its own left and delay inline */
+}
+
+.lantern .string {
+  position: absolute;
+  top: -180px;
+  left: 29px;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(#2b2f3a, #16181d);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05) inset;
+}
+
+.lantern-svg {
+  width: 60px;
+  height: 90px;
+  filter: drop-shadow(0 6px 18px rgba(255, 182, 98, 0.25));
+}
+
+/* Wind sweep — a wide translucent band moving left -> right */
+.wind {
+  position: absolute;
+  top: 0;
+  left: -60vw;
+  width: 160vw;
+  height: 100%;
+  background:
+    linear-gradient(90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(211,231,255,0.06) 20%,
+      rgba(211,231,255,0.12) 35%,
+      rgba(211,231,255,0.16) 48%,
+      rgba(211,231,255,0.12) 62%,
+      rgba(211,231,255,0.06) 80%,
+      rgba(255,255,255,0) 100%);
+  backdrop-filter: blur(1px);
+  pointer-events: none;
+
+  animation: wind-sweep 1200ms ease-in-out forwards;
+  animation-delay: 2000ms; /* after lanterns land */
+}
+
+/* Soft title while intro plays */
+.intro-title {
+  position: absolute;
+  bottom: 10vh;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #e9e7e3;
+  opacity: 0.0;
+  animation: title-fade 800ms ease forwards;
+  animation-delay: 1400ms;
+  text-shadow: 0 4px 30px rgba(255, 196, 118, 0.15);
+}
+
+/* Keyframes */
+@keyframes lantern-drop {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0.0;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(-8px); /* tiny bounce */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wind-sweep {
+  0%   { transform: translateX(0); opacity: 0.0; }
+  10%  { opacity: 1; }
+  100% { transform: translateX(100vw); opacity: 0.9; }
+}
+
+@keyframes intro-push {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes title-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Accessibility: prefer reduced motion = skip intro quickly */
+@media (prefers-reduced-motion: reduce) {
+  .lantern,
+  .wind,
+  .intro-title,
+  .intro-overlay {
+    animation: none !important;
+  }
+}
+
+```
+
+<!-- CODE SNAPSHOT END -->
