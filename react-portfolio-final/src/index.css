@@ -1,12 +1,18 @@
-/* Minimal base so our intro overlay fills the screen perfectly */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-html, body, #root { height: 100%; margin: 0; }
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
 
 body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background: #15090b; /* deep maroon fallback behind everything */
+  background: #15090b;
   color: #e8e8ea;
 }

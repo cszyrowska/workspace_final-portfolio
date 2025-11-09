@@ -1,27 +1,28 @@
 .intro-overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(1200px 600px at 50% 20%, #1b2230 0%, #0f1115 60%, #0a0c10 100%);
+  background: radial-gradient(
+    1200px 600px at 50% 20%,
+    #1c1000 0%,
+    #0d0600 60%,
+    #050300 100%
+  );
   overflow: hidden;
   z-index: 9999;
 
-  /* Final push off-screen after wind completes */
+  /* Push the entire overlay off-screen at the end */
   animation: intro-push 600ms ease-in-out forwards;
-  animation-delay: 3200ms; /* starts after wind ends */
+  animation-delay: 3200ms;
 }
 
 /* Lanterns container pieces */
 .lantern {
   position: absolute;
-  top: 10vh; /* <-- CHANGE #1: From -140px so lanterns are visible */
-  transform: translateY(-120%);
-
-  /* We now have two animations running on the lanterns */
+  top: 10vh;
+  transform: translateY(-150%); /* start slightly higher */
   animation:
-    lantern-drop 1000ms cubic-bezier(.2,.7,.15,1) forwards,
+    lantern-drop 1000ms cubic-bezier(0.2, 0.7, 0.15, 1) forwards,
     lantern-sway 1200ms ease-in-out forwards;
-
-  /* The first delay is from the component (--drop-delay), the second is fixed */
   animation-delay: var(--drop-delay, 0ms), 2000ms;
 }
 
@@ -31,40 +32,40 @@
   left: 29px;
   width: 2px;
   height: 200px;
-  background: linear-gradient(#2b2f3a, #16181d);
+  background: linear-gradient(#4d3d2e, #2b231a);
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.05) inset;
 }
 
 .lantern-svg {
   width: 60px;
   height: 90px;
-  filter: drop-shadow(0 6px 18px rgba(255, 182, 98, 0.25));
+  filter: drop-shadow(0 6px 18px rgba(255, 182, 98, 0.35));
 }
 
-/* Wind sweep — a wide translucent band moving left -> right */
+/* Wind sweep */
 .wind {
   position: absolute;
   top: 0;
   left: -60vw;
   width: 160vw;
   height: 100%;
-  background:
-    linear-gradient(90deg,
-      rgba(255,255,255,0) 0%,
-      rgba(211,231,255,0.06) 20%,
-      rgba(211,231,255,0.12) 35%,
-      rgba(211,231,255,0.16) 48%,
-      rgba(211,231,255,0.12) 62%,
-      rgba(211,231,255,0.06) 80%,
-      rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 248, 220, 0.08) 20%,
+    rgba(255, 248, 220, 0.18) 35%,
+    rgba(255, 248, 220, 0.22) 48%,
+    rgba(255, 248, 220, 0.18) 62%,
+    rgba(255, 248, 220, 0.08) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
   backdrop-filter: blur(1px);
   pointer-events: none;
-
   animation: wind-sweep 1200ms ease-in-out forwards;
-  animation-delay: 2000ms; /* after lanterns land */
+  animation-delay: 2000ms;
 }
 
-/* Soft title while intro plays */
+/* Title */
 .intro-title {
   position: absolute;
   bottom: 10vh;
@@ -73,62 +74,80 @@
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: #e9e7e3;
-  opacity: 0.0;
+  color: #f7e3b1;
+  opacity: 0;
   animation: title-fade 800ms ease forwards;
   animation-delay: 1400ms;
-  text-shadow: 0 4px 30px rgba(255, 196, 118, 0.15);
+  text-shadow: 0 4px 30px rgba(255, 196, 118, 0.3);
 }
 
 /* Keyframes */
 @keyframes lantern-drop {
   0% {
-    transform: translateY(-120%);
-    opacity: 0.0;
+    transform: translateY(-150%);
+    opacity: 0;
   }
   70% {
-    transform: translateY(0);
+    transform: translateY(30vh); /* lanterns fall further down */
     opacity: 1;
   }
   85% {
-    transform: translateY(-8px); /* tiny bounce */
+    transform: translateY(28vh);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(30vh); /* subtle bounce settle */
   }
 }
 
 @keyframes wind-sweep {
-  0%   { transform: translateX(0); opacity: 0.0; }
-  10%  { opacity: 1; }
-  100% { transform: translateX(100vw); opacity: 0.9; }
-}
-
-@keyframes intro-push {
-  from { transform: translateX(0); }
-  to   { transform: translateX(100%); }
-}
-
-@keyframes title-fade {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* <-- CHANGE #2: New animation for the lantern sway effect */
-@keyframes lantern-sway {
   0% {
-    transform: translateY(0) rotate(0deg) translateX(0);
+    transform: translateX(0);
+    opacity: 0;
   }
-  50% {
-    transform: translateY(0) rotate(-6deg) translateX(10px);
+  10% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(0) rotate(2deg) translateX(25px);
+    transform: translateX(100vw);
     opacity: 0.9;
   }
 }
 
-/* Accessibility: prefer reduced motion = skip intro quickly */
+@keyframes intro-push {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes title-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sway of the lanterns after they land */
+@keyframes lantern-sway {
+  0% {
+    transform: translateY(30vh) rotate(0deg) translateX(0);
+  }
+  50% {
+    transform: translateY(30vh) rotate(-6deg) translateX(10px);
+  }
+  100% {
+    transform: translateY(30vh) rotate(2deg) translateX(25px);
+    opacity: 0.9;
+  }
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .lantern,
   .wind,

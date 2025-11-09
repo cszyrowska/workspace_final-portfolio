@@ -1,0 +1,336 @@
+/* Overall layout */
+.home-main {
+  min-height: 100vh;
+  background: #15090b;
+  padding: 1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #e8e8ea;
+}
+
+.home-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .home-main {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-main {
+    padding: 3rem;
+  }
+}
+
+/* Hero shell */
+.hero-shell {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 1.75rem 1.75rem 1.9rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(240, 194, 123, 0.7);
+  background: radial-gradient(circle at top, #120806 0%, #050201 55%, #020001 100%);
+  color: #f7f0e3;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .hero-shell {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.7);
+  margin: 0 0 0.25rem;
+}
+
+/* Compass + name */
+.hero-name-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.compass-wrapper {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.compass-svg {
+  width: 100%;
+  height: 100%;
+  color: #f0c27b;
+}
+
+/* slow rotation */
+.compass-spin {
+  animation: spin-slow 20s linear infinite;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hero-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #b38a63;
+}
+
+.hero-copy {
+  margin: 0.8rem 0 0.6rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #f3e6d3;
+}
+
+/* Meta pills */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.meta-pill {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 194, 123, 0.7);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Passport-style card on the right */
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.passport-card {
+  width: 100%;
+  max-width: 270px;
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem 1rem;
+  border: 1px solid rgba(240, 194, 123, 0.75);
+  background: linear-gradient(145deg, #1a100b, #100806);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.passport-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.passport-title {
+  margin: 0 0 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+.passport-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.passport-link {
+  display: block;
+  padding: 0.5rem 0.55rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid transparent;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.2s ease,
+    border-color 0.18s ease,
+    background 0.2s ease;
+}
+
+.passport-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(240, 194, 123, 0.8);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  background: rgba(42, 26, 16, 0.95);
+}
+
+.passport-main {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f7e3b1;
+}
+
+.passport-sub {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+  color: #e4cfb0;
+}
+
+/* Stamp row */
+.passport-stamp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed rgba(240, 194, 123, 0.4);
+}
+
+.stamp-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 194, 123, 0.9);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8);
+  background: radial-gradient(circle at 30% 30%, #f7e3b1 0%, #b37a3a 50%, #5d3113 100%);
+}
+
+.stamp-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+/* Divider + plane */
+.hero-divider {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(240, 194, 123, 0.3);
+}
+
+.travel-line {
+  position: relative;
+  height: 1.8rem;
+  border-top: 1px dashed rgba(240, 194, 123, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.airplane-icon {
+  position: absolute;
+  top: -0.9rem;
+  left: 0;
+  z-index: 10;
+  transition: transform 0.1s linear;
+}
+
+.airplane-svg {
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(90deg);
+  color: #f7e3e3;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
+}
+
+.hero-note {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.8);
+}
+
+/* Placeholder section */
+.placeholder-section {
+  margin-top: 3.5rem;
+  padding: 2rem 1.2rem;
+  text-align: center;
+}
+
+.placeholder-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: #f0c27b;
+}
+
+.placeholder-section p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* Name drift-in animation */
+.name-animation {
+  opacity: 0;
+  animation-name: name-drift-in;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes name-drift-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Compass slow spin */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion: keep things accessible */
+@media (prefers-reduced-motion: reduce) {
+  .compass-spin {
+    animation: none !important;
+  }
+
+  .name-animation {
+    animation-duration: 0.01s;
+    animation-delay: 0s !important;
+  }
+}
