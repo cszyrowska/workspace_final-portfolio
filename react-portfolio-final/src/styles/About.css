@@ -1,0 +1,307 @@
+/* Overall section layout */
+.about-section {
+  margin-top: 5rem;
+  padding: 0 1rem 5rem;
+}
+
+.about-header {
+  max-width: 48rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.about-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(2.8rem, 5vw, 3.6rem);
+  color: #f0c27b;
+  letter-spacing: 0.05em;
+}
+
+.about-intro {
+  margin: 0 auto;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  line-height: 1.8;
+  color: #f7e3d2;
+  max-width: 42rem;
+}
+
+/* Two-column layout: ladybug left, text right */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+
+.ladybug-region {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Bigger ladybug */
+.ladybug-button {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  outline-offset: 6px;
+}
+
+.ladybug-button:hover,
+.ladybug-button:focus-visible {
+  outline: 1px dashed rgba(240, 194, 123, 0.6);
+}
+
+.ladybug-helper {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.85);
+}
+
+/* Ladybug body */
+.ladybug-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 230px;
+  height: 270px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Head */
+.ladybug-head {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  width: 110px;
+  height: 70px;
+  transform: translateX(-50%);
+  border-radius: 50px 50px 40px 40px;
+  background: #1b1014;
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.7),
+    0 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Shell */
+.ladybug-shell {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px 100px 120px 120px;
+  background: radial-gradient(circle at 30% 20%, #ff6f6f 0%, #b01e38 40%, #5b1020 100%);
+  border: 2px solid #2c060e;
+  box-shadow:
+    0 10px 18px rgba(0, 0, 0, 0.7),
+    0 0 0 2px rgba(69, 21, 28, 0.9);
+}
+
+/* Middle line on shell */
+.ladybug-shell-line {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 3, 5, 0.2),
+    rgba(12, 3, 5, 0.8),
+    rgba(12, 3, 5, 0.2)
+  );
+}
+
+/* Spots */
+.ladybug-spot {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #4b111d 0%, #0a0004 70%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.spot-1 {
+  top: 36px;
+  left: 40px;
+}
+
+.spot-2 {
+  top: 36px;
+  right: 40px;
+}
+
+.spot-3 {
+  top: 100px;
+  left: 46px;
+}
+
+.spot-4 {
+  top: 100px;
+  right: 46px;
+}
+
+/* Legs + traits */
+.ladybug-leg {
+  --distance: 210px;
+  --angle: 0deg;
+
+  position: absolute;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 260ms ease-out,
+    opacity 220ms ease-out;
+}
+
+/* Anchor points on the shell + angled directions 
+   (no leg is purely "north" or "east" now) */
+.leg-1 {
+  --angle: -140deg; /* top-left, diagonal */
+  top: 34%;
+  left: 41%;
+}
+
+.leg-2 {
+  --angle: -50deg; /* upper-right, diagonal */
+  top: 38%;
+  left: 70%;
+}
+
+.leg-3 {
+  --angle: 10deg; /* mid-right, slightly up */
+  top: 56%;
+  left: 79%;
+}
+
+.leg-4 {
+  --angle: 60deg; /* lower-right, diagonal */
+  top: 72%;
+  left: 55%;
+}
+
+.leg-5 {
+  --angle: 140deg; /* lower-left, diagonal */
+  top: 66%;
+  left: 27%;
+}
+
+.leg-6 {
+  --angle: 210deg; /* mid-left, diagonal down */
+  top: 50%;
+  left: 25%;
+}
+
+.leg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(calc(var(--angle) * -1));
+}
+
+/* Curved SVG leg */
+.leg-line {
+  width: 110px;
+  height: 170px;
+  overflow: visible;
+}
+
+/* base style for the path */
+.leg-line path {
+  /* more obvious curve: bows out then comes back */
+  d: path("M50 0 C80 50, 20 110, 50 170");
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  transition: stroke-dashoffset 300ms ease-out;
+}
+
+/* Animate the leg “growing” when expanded */
+.ladybug-button:hover .leg-line path,
+.ladybug-button:focus-visible .leg-line path,
+.ladybug-button.is-expanded .leg-line path {
+  stroke-dashoffset: 0;
+}
+
+/* Trait label at the *tip* of the leg */
+.leg-label {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(4, 1, 2, 0.96);
+  border: 1px solid rgba(240, 194, 123, 0.8);
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f7e3b1;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 300ms ease-out,
+    transform 260ms ease-out;
+}
+
+/* Expanded state for positioning */
+.ladybug-button:hover .ladybug-leg,
+.ladybug-button:focus-visible .ladybug-leg,
+.ladybug-button.is-expanded .ladybug-leg {
+  transform: translate(-50%, -50%) rotate(var(--angle))
+    translateY(calc(var(--distance) * -1));
+  opacity: 1;
+}
+
+.ladybug-button:hover .leg-label,
+.ladybug-button:focus-visible .leg-label,
+.ladybug-button.is-expanded .leg-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Right-side text */
+.about-side-copy {
+  max-width: 36rem;
+  font-size: clamp(1.15rem, 2vw, 1.3rem);
+  line-height: 1.9;
+  color: #f3e6d3;
+}
+
+.about-side-copy p {
+  margin: 0 0 1.2rem;
+}
+
+.about-side-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* Reduced motion: no animation, just appear/disappear instantly */
+@media (prefers-reduced-motion: reduce) {
+  .ladybug-leg,
+  .leg-label {
+    transition: none !important;
+  }
+
+  .leg-line path {
+    transition: none !important;
+    stroke-dashoffset: 0;
+  }
+}

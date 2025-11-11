@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../styles/Home.css'
+import AboutSection from './AboutSection.jsx'
 
 function CompassRose() {
   return (
@@ -91,9 +92,9 @@ export default function Home() {
             </div>
 
             <p className="hero-copy">
-              I weave stories through movement, visuals, and the web —
-              blending a love for travel, vintage objects, and thoughtful
-              interaction into everything I create.
+              I weave stories through movement, visuals, and the web — blending
+              a love for travel, vintage objects, and thoughtful interaction
+              into everything I create.
             </p>
 
             <div className="hero-meta">
@@ -107,18 +108,48 @@ export default function Home() {
               <p className="passport-title">Travel log</p>
               <ul className="passport-list">
                 <li>
-                  <a href="#work" className="passport-link">
-                    <span className="passport-main">Work</span>
+                  <a href="#about" className="passport-link">
+                    <span className="passport-main">About me</span>
                     <span className="passport-sub">
-                      Selected projects and experiments
+                      Story, roots, and what quietly drives me.
                     </span>
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="passport-link">
-                    <span className="passport-main">About</span>
+                  <a href="#current-work" className="passport-link">
+                    <span className="passport-main">
+                      Current work and service
+                    </span>
                     <span className="passport-sub">
-                      Journey, influences, and process
+                      What I&apos;m building and how we can collaborate.
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#experience" className="passport-link">
+                    <span className="passport-main">Work experience</span>
+                    <span className="passport-sub">
+                      Roles, projects, and lessons from the journey.
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#achievements" className="passport-link">
+                    <span className="passport-main">
+                      Achievements and aspirations
+                    </span>
+                    <span className="passport-sub">
+                      Highlights so far and the dreams ahead.
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#blog" className="passport-link">
+                    <span className="passport-main">
+                      Dance and travel blog
+                    </span>
+                    <span className="passport-sub">
+                      Movement, cities, and thoughts from the road.
                     </span>
                   </a>
                 </li>
@@ -126,7 +157,7 @@ export default function Home() {
                   <a href="#contact" className="passport-link">
                     <span className="passport-main">Contact</span>
                     <span className="passport-sub">
-                      Let&apos;s plan your next story
+                      Let&apos;s plan your next story.
                     </span>
                   </a>
                 </li>
@@ -148,14 +179,47 @@ export default function Home() {
           <p className="hero-note">Scroll to board the journey</p>
         </div>
 
-        {/* Placeholder for future sections */}
-        <section className="placeholder-section">
-          <h2 id="work">Sections to map out</h2>
+        {/* NEW: About me section with ladybug */}
+        <AboutSection />
+
+        {/* Other sections stay as placeholders for now */}
+        <section className="placeholder-section" id="current-work">
+          <h2>Current work and service</h2>
           <p>
-            Next, we can sketch the portfolio sections — a project gallery,
-            an about page, and a simple way to reach out. Imagine the
-            &quot;Work&quot; section laid out like a small collection of
-            stamped postcards from different chapters of your life.
+            A space for the freelance projects, collaborations, and offerings I
+            have open right now.
+          </p>
+        </section>
+
+        <section className="placeholder-section" id="experience">
+          <h2>Work experience</h2>
+          <p>
+            Here I&apos;ll map roles, projects, and responsibilities like a
+            timeline of stamps in a passport.
+          </p>
+        </section>
+
+        <section className="placeholder-section" id="achievements">
+          <h2>Achievements and aspirations</h2>
+          <p>
+            Highlights so far, plus the kind of work and stages I&apos;d love to
+            reach next.
+          </p>
+        </section>
+
+        <section className="placeholder-section" id="blog">
+          <h2>Dance and travel blog</h2>
+          <p>
+            Notes from classes, cities, rehearsals, and the small moments that
+            shape my practice.
+          </p>
+        </section>
+
+        <section className="placeholder-section" id="contact">
+          <h2>Contact</h2>
+          <p>
+            A simple place for a contact form or email links — the boarding gate
+            for new projects together.
           </p>
         </section>
       </div>

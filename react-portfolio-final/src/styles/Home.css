@@ -131,9 +131,9 @@
 
 .passport-card {
   width: 100%;
-  max-width: 270px;
+  max-width: 420px; /* wider box */
   border-radius: 0.9rem;
-  padding: 1rem 1.1rem 1rem;
+  padding: 1.2rem 1.4rem 1.2rem;
   border: 1px solid rgba(240, 194, 123, 0.75);
   background: linear-gradient(145deg, #1a100b, #100806);
   box-shadow:
@@ -159,25 +159,27 @@
 }
 
 .passport-title {
-  margin: 0 0 0.8rem;
+  margin: 0 0 1rem;
   font-size: 0.8rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: rgba(240, 194, 123, 0.9);
+  text-align: left;
 }
 
+/* two-column layout for links */
 .passport-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 0.6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
+  margin: 0 0 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 0.7rem;
 }
 
 .passport-link {
   display: block;
-  padding: 0.5rem 0.55rem;
+  padding: 0.65rem 0.7rem;
   border-radius: 0.6rem;
   text-decoration: none;
   background: rgba(0, 0, 0, 0.5);
@@ -187,6 +189,7 @@
     box-shadow 0.2s ease,
     border-color 0.18s ease,
     background 0.2s ease;
+  height: 100%;
 }
 
 .passport-link:hover {
@@ -198,7 +201,7 @@
 
 .passport-main {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #f7e3b1;
 }
@@ -206,8 +209,9 @@
 .passport-sub {
   display: block;
   margin-top: 0.1rem;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: #e4cfb0;
+  opacity: 0.9;
 }
 
 /* Stamp row */
@@ -215,7 +219,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.4rem;
+  margin-top: 0.7rem;
   padding-top: 0.45rem;
   border-top: 1px dashed rgba(240, 194, 123, 0.4);
 }
