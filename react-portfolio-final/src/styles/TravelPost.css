@@ -1,0 +1,613 @@
+/* src/styles/TravelPost.css */
+
+/* --- Keyframe Animations --- */
+
+/* Subtle continuous rotation for small elements */
+@keyframes rotate-subtle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Subtle continuous bobbing for a light feel */
+@keyframes bob-subtle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Pop-in animation for initial load */
+@keyframes collage-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes section-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Base Page Styles --- */
+
+.travel-post-page {
+  min-height: 100vh;
+  padding: 2.5rem 1.4rem 3.5rem;
+  background:
+    radial-gradient(circle at top, #faf3e5 0%, #f3e7d4 40%, #efe1cc 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  color: #433326;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.travel-post-inner {
+  max-width: 68rem;
+  margin: 0 auto;
+  position: relative; /* for absolutely positioned doodles & extra photos */
+}
+
+/* --- Doodles & Stickers (Clutter) --- */
+
+.doodle-sticker {
+  position: absolute;
+  font-size: 2.2rem;
+  pointer-events: none;
+  opacity: 0.85;
+  z-index: 10;
+  animation: bob-subtle 4s ease-in-out infinite;
+  animation-delay: var(--delay, 0ms);
+}
+
+.doodle-1 {
+  top: 12%;
+  left: -30px;
+  transform: rotate(-15deg);
+}
+
+.doodle-2 {
+  top: 35%;
+  right: -10px;
+  font-size: 1.8rem;
+  animation: rotate-subtle 10s linear infinite;
+  animation-delay: var(--delay, 0ms);
+}
+
+.doodle-3 {
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%) rotate(5deg);
+  font-size: 2.5rem;
+}
+
+/* --- Header / Title Area --- */
+
+.travel-post-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.travel-post-back {
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b0893f;
+}
+
+.travel-post-back:hover {
+  text-decoration: underline;
+}
+
+.travel-post-chip-main {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(160, 112, 44, 0.9);
+}
+
+/* Fun Handwritten Title Box */
+
+.handwritten-title-box {
+  background: rgba(255, 240, 204, 0.95);
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.8rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(1deg);
+  display: inline-block;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+.travel-post-title {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  color: #b0443f;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* --- Itinerary timeline under title --- */
+
+.travel-itinerary {
+  margin-bottom: 3.5rem;
+}
+
+.travel-itinerary-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.travel-itinerary-title {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9b7536;
+}
+
+.travel-itinerary-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #7a6042;
+  opacity: 0.9;
+}
+
+/* Vertical timeline */
+
+.travel-itinerary-timeline {
+  position: relative;
+  margin-top: 1.1rem;
+  padding-left: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.travel-itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0.15rem;
+  bottom: 0.3rem;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(201, 160, 82, 0.7),
+    rgba(201, 160, 82, 0.7) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.9;
+}
+
+.travel-itinerary-item {
+  position: relative;
+  padding-left: 0.4rem;
+}
+
+.travel-itinerary-item::before {
+  content: '';
+  position: absolute;
+  left: -1.1rem;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #f7e3b1;
+  border: 1px solid rgba(160, 112, 44, 0.9);
+  box-shadow: 0 0 8px rgba(247, 213, 150, 0.7);
+}
+
+.travel-itinerary-day-label {
+  margin: 0 0 0.15rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #5a4027;
+}
+
+.travel-itinerary-text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #6f5536;
+}
+
+/* --- Collage Layout --- */
+
+.travel-collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+  gap: 2.4rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .travel-collage {
+    grid-template-columns: 1fr;
+  }
+}
+
+.collage-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.collage-piece {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  animation: collage-pop 650ms ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* --- Polaroid Frames --- */
+
+.collage-photo {
+  max-width: 18rem;
+}
+
+.collage-column-right .collage-photo {
+  align-self: flex-end;
+}
+
+.small-shift {
+  transform-origin: center;
+}
+
+.polaroid-frame {
+  background: #fffdf7;
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.7rem 1.1rem;
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  transform: rotate(-2deg);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.collage-photo.small-shift .polaroid-frame {
+  transform: rotate(3deg);
+}
+
+.polaroid-frame.small {
+  max-width: 14rem;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow:
+    0 16px 30px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.polaroid-image {
+  width: 100%;
+  display: block;
+  border-radius: 0.35rem;
+  object-fit: cover;
+}
+
+.polaroid-caption {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #5c4634;
+}
+
+/* --- Photo Note (Torn Paper Effect) --- */
+
+.collage-note {
+  background: rgba(255, 252, 245, 0.92);
+  border-radius: 0.9rem;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-1deg);
+}
+
+.torn-paper {
+  background: #fffdf7;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  padding: 1.2rem;
+  position: relative;
+  transform: rotate(2deg);
+  margin-top: 1.5rem;
+  margin-left: 10px;
+}
+
+.torn-paper::before,
+.torn-paper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(
+    to right,
+    #fffdf7 0%,
+    transparent 2%,
+    transparent 98%,
+    #fffdf7 100%
+  );
+}
+
+.torn-paper::before {
+  top: -5px;
+  background-size: 20px 10px;
+  background-image: radial-gradient(
+    circle at 10px 5px,
+    rgba(0, 0, 0, 0.1) 2px,
+    transparent 2px
+  );
+}
+
+.torn-paper::after {
+  bottom: -5px;
+  background-size: 20px 10px;
+  background-image: radial-gradient(
+    circle at 10px 5px,
+    rgba(0, 0, 0, 0.1) 2px,
+    transparent 2px
+  );
+}
+
+.travel-post-summary {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: #6f5536;
+}
+
+/* --- Icons / Pills --- */
+
+.collage-icons {
+  align-self: flex-start;
+}
+
+.collage-icons-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9b7536;
+}
+
+.trip-icon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.trip-icon-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 252, 245, 0.95);
+  border: 1px solid rgba(240, 194, 123, 0.8);
+  font-size: 0.9rem;
+  color: #5a4027;
+  cursor: default;
+  transition: transform 130ms ease, box-shadow 130ms ease;
+}
+
+.trip-icon-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+.trip-icon-emoji {
+  font-size: 1.1rem;
+}
+
+.trip-icon-text {
+  font-size: 0.85rem;
+}
+
+/* --- Doodle Line Divider --- */
+
+.collage-doodle-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2rem;
+  height: 22px;
+  background-image: radial-gradient(
+      circle at 4px 11px,
+      #c79b4c 0,
+      #c79b4c 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent 6px,
+      #c79b4c 6px,
+      #c79b4c 10px,
+      transparent 10px,
+      transparent 16px
+    );
+  background-size: 18px 22px;
+  opacity: 0.7;
+}
+
+/* --- Extra overlapping photos inside collage --- */
+
+.extra-photo {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none; /* purely decorative */
+}
+
+.extra-photo-image {
+  display: block;
+  width: 17rem; /* adjust for bigger/smaller */
+  max-width: 40vw;
+  border-radius: 0.8rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+}
+
+/* Default positions – tweak these numbers to move them */
+.extra-photo-1 {
+  top: 4%;
+  right: 38%;
+  transform: rotate(-4deg);
+}
+
+.extra-photo-2 {
+  top: 43%;
+  right: 27%;
+  transform: rotate(3deg);
+}
+
+/* --- Main Sections (notes area) --- */
+
+.travel-sections {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.travel-section {
+  background: rgba(255, 252, 245, 0.9);
+  border-radius: 0.9rem;
+  padding: 1.2rem 1.3rem 1.4rem;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  position: relative;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: section-fade 680ms ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+/* little corner marks */
+.travel-section::before,
+.travel-section::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(201, 160, 82, 0.6);
+}
+
+.travel-section::before {
+  top: 6px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.travel-section::after {
+  bottom: 6px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+.travel-section-title {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  color: #5a3f1d;
+}
+
+.travel-section p {
+  margin: 0 0 0.6rem;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: #6f5536;
+}
+
+/* Specific component for images inside a text block */
+
+.section-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.section-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.6rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1.5deg);
+}
+
+/* --- Footer --- */
+
+.travel-post-footer {
+  margin-top: 2.4rem;
+}
+
+.travel-post-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #8b6b3d;
+}
+
+/* --- Small screens tweaks --- */
+
+@media (max-width: 540px) {
+  .travel-post-page {
+    padding-inline: 1rem;
+  }
+
+  .handwritten-title-box {
+    padding-inline: 1.2rem;
+  }
+
+  .travel-itinerary-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

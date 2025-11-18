@@ -1,0 +1,116 @@
+/* src/styles/CurrentWork.css */
+
+.current-work-section {
+  margin-top: 3.5rem;
+  padding-bottom: 3.2rem;
+}
+
+/* Header */
+
+.current-work-header {
+  max-width: 52rem;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.current-work-label {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem; /* bigger label */
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+.current-work-heading {
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.6rem, 5vw, 3.2rem); /* bigger main title */
+  color: #f7e3b1;
+  letter-spacing: 0.04em;
+}
+
+.current-work-intro {
+  margin: 0;
+  font-size: 1.25rem; /* bigger paragraph text */
+  line-height: 2.05;
+  color: #f3e6d3;
+}
+
+/* List */
+
+.current-work-list {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  margin-top: 2.2rem;
+}
+
+.current-work-item {
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(240, 194, 123, 0.26);
+}
+
+.current-work-item:first-child {
+  border-top: 1px solid rgba(240, 194, 123, 0.32);
+}
+
+.current-work-tag {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem; /* bigger tag */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+.current-work-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.7rem; /* bigger item title */
+  color: #f7e3b1;
+}
+
+.current-work-time {
+  margin: 0 0 0.7rem;
+  font-size: 1.25rem; /* bigger meta line */
+  color: #e1c8a7;
+}
+
+/* Points */
+
+.current-work-points {
+  margin: 0;
+  padding-left: 1.4rem;
+  font-size: 1.3rem; /* bigger bullets */
+  line-height: 2.1;
+  color: #e9dac7;
+}
+
+.current-work-points li + li {
+  margin-top: 0.25rem;
+}
+
+/* Small screens */
+
+@media (max-width: 540px) {
+  .current-work-section {
+    padding-inline: 1rem;
+  }
+
+  .current-work-list {
+    max-width: 100%;
+  }
+
+  .current-work-heading {
+    font-size: 2.4rem; /* slightly restrained on tiny screens */
+  }
+
+  .current-work-title {
+    font-size: 1.5rem;
+  }
+
+  .current-work-intro,
+  .current-work-time,
+  .current-work-points {
+    font-size: 1.15rem;
+  }
+}

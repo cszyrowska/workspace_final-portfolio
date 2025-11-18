@@ -1,6 +1,13 @@
+// src/components/Home.jsx
 import { useEffect, useState } from 'react'
 import '../styles/Home.css'
 import AboutSection from './AboutSection.jsx'
+import CurrentWork from './CurrentWork.jsx'
+import ExperienceSection from './ExperienceSection.jsx'
+import AimsSection from './AimsSection.jsx'
+import TravelBlogSection from './TravelBlogSection.jsx'
+
+
 
 function CompassRose() {
   return (
@@ -54,7 +61,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const maxScrollDistance = 40 // a bit more gentle than before
+      const maxScrollDistance = 40
       const currentScroll = window.scrollY
 
       let progress = 0
@@ -74,101 +81,107 @@ export default function Home() {
   return (
     <main className="home-main">
       <div className="home-inner">
-        {/* Simple, vintage hero */}
+        {/* NEW: two separate hero boxes next to each other */}
         <header className="hero-shell">
-          <div className="hero-left">
-            <p className="hero-tagline">PORTFOLIO · 2025</p>
+          {/* Left box: name + intro */}
+          <section className="hero-card hero-card-main">
+            <div className="hero-left">
+              <p className="hero-tagline">PORTFOLIO · 2025</p>
 
-            <div className="hero-name-row">
-              <CompassRose />
-              <div>
-                <h1 className="hero-title name-animation">
-                  Cecylia Szyrowska
-                </h1>
-                <p className="hero-subtitle">
-                  Designer · Dancer · Explorer
-                </p>
+              <div className="hero-name-row">
+                <CompassRose />
+                <div>
+                  <h1 className="hero-title name-animation">
+                    Cecylia Szyrowska
+                  </h1>
+                  <p className="hero-subtitle">
+                    Designer · Dancer · Explorer
+                  </p>
+                </div>
+              </div>
+
+              <p className="hero-copy">
+                I weave stories through movement, visuals, and the web – blending
+                a love for travel, vintage objects, and thoughtful interaction
+                into everything I create.
+              </p>
+
+              <div className="hero-meta">
+                <span className="meta-pill">Based in Plymouth, UK</span>
+                <span className="meta-pill">Working worldwide</span>
               </div>
             </div>
+          </section>
 
-            <p className="hero-copy">
-              I weave stories through movement, visuals, and the web — blending
-              a love for travel, vintage objects, and thoughtful interaction
-              into everything I create.
-            </p>
+          {/* Right box: travel log */}
+          <aside className="hero-card hero-card-travel">
+            <div className="hero-right">
+              <div className="passport-card">
+                <p className="passport-title">Travel log</p>
+                <ul className="passport-list">
+                  <li>
+                    <a href="#about" className="passport-link">
+                      <span className="passport-main">About me</span>
+                      <span className="passport-sub">
+                        Story, roots, and what quietly drives me.
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#current-work" className="passport-link">
+                      <span className="passport-main">
+                        Current work and service
+                      </span>
+                      <span className="passport-sub">
+                        What I&apos;m building and how we can collaborate.
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience" className="passport-link">
+                      <span className="passport-main">Work experience</span>
+                      <span className="passport-sub">
+                        Roles, projects, and lessons from the journey.
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#achievements" className="passport-link">
+                      <span className="passport-main">
+                        Achievements and aspirations
+                      </span>
+                      <span className="passport-sub">
+                        Highlights so far and the dreams ahead.
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#blog" className="passport-link">
+                      <span className="passport-main">
+                        Dance and travel blog
+                      </span>
+                      <span className="passport-sub">
+                        Movement, cities, and thoughts from the road.
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" className="passport-link">
+                      <span className="passport-main">Contact</span>
+                      <span className="passport-sub">
+                        Let&apos;s plan your next story.
+                      </span>
+                    </a>
+                  </li>
+                </ul>
 
-            <div className="hero-meta">
-              <span className="meta-pill">Based in Plymouth, UK</span>
-              <span className="meta-pill">Working worldwide</span>
-            </div>
-          </div>
-
-          <div className="hero-right">
-            <div className="passport-card">
-              <p className="passport-title">Travel log</p>
-              <ul className="passport-list">
-                <li>
-                  <a href="#about" className="passport-link">
-                    <span className="passport-main">About me</span>
-                    <span className="passport-sub">
-                      Story, roots, and what quietly drives me.
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#current-work" className="passport-link">
-                    <span className="passport-main">
-                      Current work and service
-                    </span>
-                    <span className="passport-sub">
-                      What I&apos;m building and how we can collaborate.
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#experience" className="passport-link">
-                    <span className="passport-main">Work experience</span>
-                    <span className="passport-sub">
-                      Roles, projects, and lessons from the journey.
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#achievements" className="passport-link">
-                    <span className="passport-main">
-                      Achievements and aspirations
-                    </span>
-                    <span className="passport-sub">
-                      Highlights so far and the dreams ahead.
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#blog" className="passport-link">
-                    <span className="passport-main">
-                      Dance and travel blog
-                    </span>
-                    <span className="passport-sub">
-                      Movement, cities, and thoughts from the road.
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="passport-link">
-                    <span className="passport-main">Contact</span>
-                    <span className="passport-sub">
-                      Let&apos;s plan your next story.
-                    </span>
-                  </a>
-                </li>
-              </ul>
-
-              <div className="passport-stamp-row">
-                <span className="stamp-dot" />
-                <span className="stamp-label">Open for collaborations</span>
+                <div className="passport-stamp-row">
+                  <span className="stamp-dot" />
+                  <span className="stamp-label">Open for collaborations</span>
+                </div>
               </div>
             </div>
-          </div>
+          </aside>
         </header>
 
         {/* Divider with subtle travel line */}
@@ -179,46 +192,27 @@ export default function Home() {
           <p className="hero-note">Scroll to board the journey</p>
         </div>
 
-        {/* NEW: About me section with ladybug */}
+        {/* About me with globe */}
         <AboutSection />
 
-        {/* Other sections stay as placeholders for now */}
-        <section className="placeholder-section" id="current-work">
-          <h2>Current work and service</h2>
-          <p>
-            A space for the freelance projects, collaborations, and offerings I
-            have open right now.
-          </p>
-        </section>
+        {/* Current work (only what you’re doing now) */}
+        <CurrentWork />
 
-        <section className="placeholder-section" id="experience">
-          <h2>Work experience</h2>
-          <p>
-            Here I&apos;ll map roles, projects, and responsibilities like a
-            timeline of stamps in a passport.
-          </p>
-        </section>
+        {/* Work experience timeline */}
+        <ExperienceSection />
 
-        <section className="placeholder-section" id="achievements">
-          <h2>Achievements and aspirations</h2>
-          <p>
-            Highlights so far, plus the kind of work and stages I&apos;d love to
-            reach next.
-          </p>
-        </section>
+                {/* Aims & aspirations – interactive future routes */}
+        <AimsSection />
 
-        <section className="placeholder-section" id="blog">
-          <h2>Dance and travel blog</h2>
-          <p>
-            Notes from classes, cities, rehearsals, and the small moments that
-            shape my practice.
-          </p>
-        </section>
+
+                {/* Travel blog – image cards linking to full trip pages */}
+        <TravelBlogSection />
+
 
         <section className="placeholder-section" id="contact">
           <h2>Contact</h2>
           <p>
-            A simple place for a contact form or email links — the boarding gate
+            A simple place for a contact form or email links – the boarding gate
             for new projects together.
           </p>
         </section>

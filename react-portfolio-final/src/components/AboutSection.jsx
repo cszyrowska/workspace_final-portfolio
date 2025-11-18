@@ -1,22 +1,15 @@
-import { useState } from 'react'
+// src/components/AboutSection.jsx
 import '../styles/About.css'
+import globeBackImage from '../assets/IMG_20251118_150728_778.jpg'
 
-const TRAITS = [
-  'Creative',
-  'Curious',
-  'Hardworking',
-  'Playful',
-  'Thoughtful',
-  'Determined',
+const LOCATIONS = [
+  { id: 'uk', label: 'United Kingdom' },
+  { id: 'poland', label: 'Poland' },
+  { id: 'france', label: 'France' },
+  { id: 'spain', label: 'Spain' }, // Now representing Spain and Canaries combined
 ]
 
 export default function AboutSection() {
-  const [isExpanded, setIsExpanded] = useState(false)
-
-  const toggleExpanded = () => {
-    setIsExpanded(prev => !prev)
-  }
-
   return (
     <section className="about-section" id="about">
       <header className="about-header">
@@ -29,70 +22,73 @@ export default function AboutSection() {
       </header>
 
       <div className="about-layout">
-        {/* Left: Ladybug */}
-        <div className="ladybug-region">
-          <button
-            type="button"
-            className={`ladybug-button ${isExpanded ? 'is-expanded' : ''}`}
-            onClick={toggleExpanded}
-            aria-pressed={isExpanded}
-            aria-label="Interactive illustration: hover or tap to reveal traits."
+        {/* Left: Globe with flip image */}
+        <div className="globe-region">
+          <div
+            className="globe-wrapper"
+            aria-label="Globe showing places connected to me, which can flip to a personal image."
           >
-            {/* Ladybug body */}
-            <div className="ladybug-body">
-              <div className="ladybug-head" />
-              <div className="ladybug-shell">
-                <div className="ladybug-shell-line" />
-                <div className="ladybug-spot spot-1" />
-                <div className="ladybug-spot spot-2" />
-                <div className="ladybug-spot spot-3" />
-                <div className="ladybug-spot spot-4" />
-              </div>
-            </div>
+            <div className="globe-flip">
+              {/* FRONT – stylised globe */}
+              <div className="globe-face globe-face-front">
+                {/* Globe core */}
+                <div className="globe-core">
+                  <div className="globe-meridian globe-meridian-vertical" />
+                  <div className="globe-meridian globe-meridian-diagonal-left" />
+                  <div className="globe-meridian globe-meridian-diagonal-right" />
+                  <div className="globe-latitude globe-latitude-top" />
+                  <div className="globe-latitude globe-latitude-middle" />
+                  <div className="globe-latitude globe-latitude-bottom" />
+                </div>
 
-            {/* Legs + traits */}
-            {TRAITS.map((trait, index) => (
-              <div key={trait} className={`ladybug-leg leg-${index + 1}`}>
-                <div className="leg-content">
-                  <svg
-                    className="leg-line"
-                    viewBox="0 0 100 160"
-                    aria-hidden="true"
-                  >
-                    {/* curved leg path */}
-                    <path
-                      d="M50 0 C60 40, 40 90, 50 160"
-                      stroke="black"
-                      strokeWidth="7"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                  </svg>
-                  <span className="leg-label">{trait}</span>
+                {/* Orbit layer with lines + labels */}
+                <div className="globe-orbit">
+                  {LOCATIONS.map(location => (
+                    <div
+                      key={location.id}
+                      className={`globe-location globe-location-${location.id}`}
+                    >
+                      <div
+                        className="globe-location-line-wrapper"
+                        aria-hidden="true"
+                      >
+                        <span className="globe-location-dot" />
+                        <span className="globe-location-line" />
+                      </div>
+                      <span className="globe-location-label">
+                        {location.label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </button>
 
-          <p className="ladybug-helper">
-            Hover or tap the ladybug to reveal a few of the traits that guide how
-            I work and move.
-          </p>
+              {/* BACK – image that appears on hover */}
+              <div className="globe-face globe-face-back">
+                <img
+                  src={globeBackImage}
+                  alt="A moment that feels like home to me."
+                  className="globe-back-image"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right: Side text */}
         <div className="about-side-copy">
           <p>
-            I&apos;m drawn to projects that feel like journeys: building
-            experiences that unfold slowly, reward curiosity, and hold onto
-            small, human details. Dance and design are the two languages I use
-            most, but they&apos;re both about the same thing — connection, rhythm,
-            and how something feels from the inside.
+            I grew up between places and languages, and travel has always been
+            tied to how I see myself. Poland, the UK, Spain, and France each
+            hold their own memories: family, rehearsals, late-night buses, and
+            small moments that quietly changed how I move through the world.
           </p>
           <p>
-            Whether I&apos;m planning a route across Europe, shaping a piece of
-            choreography, or laying out a portfolio page, I care about making
-            things that feel honest, playful, and a little bit unexpected.
+            That mix shows up in my work. I like interfaces that feel like
+            maps, stories that unfold over time, and designs that invite people
+            to explore rather than rush. Whether it&apos;s a page, a piece of
+            choreography, or a new city, I&apos;m always looking for rhythm,
+            atmosphere, and a sense of journey.
           </p>
         </div>
       </div>

@@ -1,0 +1,156 @@
+/* src/styles/Experience.css */
+
+.experience-section {
+  margin-top: 4rem;
+  padding-bottom: 3.2rem;
+}
+
+/* Header */
+
+.experience-header {
+  max-width: 48rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.experience-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+.experience-heading {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2.1rem, 4vw, 2.5rem);
+  color: #f7e3b1;
+  letter-spacing: 0.04em;
+}
+
+.experience-intro {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #f3e6d3;
+}
+
+/* Timeline layout */
+
+.experience-inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+}
+
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.4rem; /* space for the timeline line */
+  position: relative;
+}
+
+/* Vertical line */
+
+.experience-list::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.2rem;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 194, 123, 0.4),
+    rgba(240, 194, 123, 0.1)
+  );
+}
+
+/* Each item */
+
+.experience-item {
+  position: relative;
+  padding: 1.3rem 0 1.4rem;
+}
+
+.experience-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Timeline dot */
+
+.experience-timeline-dot {
+  position: absolute;
+  left: -0.15rem;
+  top: 1.4rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: #f7e3b1;
+  border: 1px solid rgba(107, 72, 28, 0.9);
+  box-shadow: 0 0 8px rgba(247, 213, 150, 0.7);
+}
+
+/* Content block */
+
+.experience-content {
+  margin-left: 1.2rem;
+  padding: 0.4rem 0.1rem 0.2rem;
+}
+
+.experience-top-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: baseline;
+}
+
+.experience-role {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f7e3b1;
+}
+
+.experience-period {
+  margin: 0;
+  font-size: 1rem;
+  color: #e1c8a7;
+  white-space: nowrap;
+}
+
+.experience-place {
+  margin: 0.25rem 0 0.3rem;
+  font-size: 1.02rem;
+  color: #e9dac7;
+}
+
+.experience-summary {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: #f3e6d3;
+}
+
+/* Small screens */
+
+@media (max-width: 540px) {
+  .experience-inner {
+    padding-inline: 0.8rem;
+  }
+
+  .experience-list {
+    padding-left: 1.1rem;
+  }
+
+  .experience-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-period {
+    white-space: normal;
+  }
+}

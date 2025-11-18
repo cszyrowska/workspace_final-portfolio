@@ -1,0 +1,250 @@
+/* src/styles/Aims.css */
+
+.aims-section {
+  margin-top: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+/* Header */
+
+.aims-header {
+  max-width: 48rem;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.aims-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+.aims-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(2.3rem, 4.5vw, 2.8rem);
+  color: #f7e3b1;
+  letter-spacing: 0.04em;
+}
+
+.aims-intro {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #f3e6d3;
+}
+
+/* Grid of postcards */
+
+.aims-grid {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .aims-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Card container */
+
+.aims-card {
+  perspective: 1200px;
+}
+
+/* Flip wrapper */
+
+.aims-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px; /* was 220px */
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.15, 1);
+}
+
+
+.aims-card:hover .aims-flip {
+  transform: rotateY(180deg);
+}
+
+/* Faces */
+
+.aims-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.aims-face-front,
+.aims-face-back {
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
+}
+
+/* FRONT – postcard look */
+
+.aims-postcard {
+  position: relative;
+  height: 100%;
+  padding: 1.6rem 1.6rem 1.6rem 1.4rem; /* more breathing room */
+  background: radial-gradient(
+      circle at top left,
+      rgba(240, 194, 123, 0.24),
+      rgba(10, 4, 2, 0.98)
+    ),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  border: 1px solid rgba(240, 194, 123, 0.75);
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1.7fr);
+  gap: 1.2rem;
+}
+
+
+.aims-postcard-stamp {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.9rem;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(240, 194, 123, 0.9);
+  background: rgba(10, 4, 2, 0.95);
+  color: rgba(240, 194, 123, 0.95);
+  transform: rotate(4deg);
+}
+
+.aims-postcard-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aims-postcard-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.45rem; /* slightly larger */
+  color: #f7e3b1;
+}
+
+.aims-postcard-blurb {
+  margin: 0;
+  font-size: 1.08rem; /* slightly larger */
+  line-height: 1.8;
+  color: #e9dac7;
+}
+
+
+.aims-postcard-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.85);
+}
+
+/* Faux address lines on the right */
+
+.aims-postcard-markings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  opacity: 0.7;
+}
+
+.aims-postcard-markings span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgba(240, 194, 123, 0.3),
+    rgba(240, 194, 123, 0.9)
+  );
+}
+
+/* BACK – text side */
+
+.aims-face-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(
+    circle at top,
+    #120806 0%,
+    #050201 55%,
+    #020001 100%
+  );
+  border: 1px solid rgba(240, 194, 123, 0.8);
+}
+
+.aims-back-inner {
+  height: 100%;
+  padding: 1.6rem 1.7rem 1.6rem; /* more padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aims-back-title {
+  margin: 0 0 0.7rem;
+  font-size: 1.45rem; /* slightly larger */
+  color: #f7e3b1;
+}
+
+.aims-back-points {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 1.08rem; /* slightly larger */
+  line-height: 1.95;
+  color: #f3e6d3;
+}
+
+
+.aims-back-points li + li {
+  margin-top: 0.1rem;
+}
+
+/* Small screens */
+
+@media (max-width: 640px) {
+  .aims-grid {
+    padding-inline: 0.4rem;
+  }
+
+  .aims-postcard {
+    grid-template-columns: 1fr;
+  }
+
+  .aims-postcard-markings {
+    display: none;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .aims-flip {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .aims-card:hover .aims-flip {
+    transform: none !important;
+  }
+}

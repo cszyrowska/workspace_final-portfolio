@@ -1,0 +1,253 @@
+/* src/styles/TravelBlog.css */
+
+.travel-blog-section {
+  margin-top: 4rem;
+  padding-bottom: 3.5rem;
+}
+
+/* Header */
+
+.travel-blog-header {
+  max-width: 48rem;
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.travel-blog-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.9);
+}
+
+.travel-blog-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(2.2rem, 4.5vw, 2.7rem);
+  color: #f7e3b1;
+  letter-spacing: 0.04em;
+}
+
+.travel-blog-intro {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #f3e6d3;
+}
+
+/* Carousel shell */
+
+.travel-carousel-shell {
+  width: 100%;
+  max-width: 72rem;
+  margin: 2rem auto 0;
+  padding: 0 0.5rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Scrollable track */
+
+.travel-blog-track {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.4rem 0.1rem 0.8rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar (WebKit) */
+.travel-blog-track::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Hide scrollbar (Firefox) */
+.travel-blog-track {
+  scrollbar-width: none;
+}
+
+/* Arrows */
+
+.travel-carousel-arrow {
+  border: none;
+  background: rgba(5, 3, 2, 0.75);
+  color: rgba(240, 194, 123, 0.95);
+  border-radius: 999px;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.travel-carousel-arrow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.9);
+  background: rgba(18, 10, 6, 0.95);
+}
+
+.travel-carousel-arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* On very small screens, hide arrows and let swipe do the work */
+
+@media (max-width: 640px) {
+  .travel-carousel-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .travel-carousel-arrow {
+    display: none;
+  }
+}
+
+/* Cards in the carousel */
+
+.travel-card {
+  position: relative;
+  flex: 0 0 80%;
+  max-width: 360px;
+  scroll-snap-align: center;
+  border-radius: 1rem;
+  background: radial-gradient(
+    circle at top left,
+    rgba(240, 194, 123, 0.18),
+    rgba(8, 3, 2, 0.96)
+  );
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+@media (min-width: 768px) {
+  .travel-card {
+    flex: 0 0 320px;
+  }
+}
+
+.travel-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Image area with tape */
+
+.travel-card-image-wrap {
+  position: relative;
+  padding: 0.9rem 0.9rem 0.2rem;
+}
+
+.travel-card-image {
+  display: block;
+  width: 100%;
+  border-radius: 0.7rem;
+  object-fit: cover;
+  max-height: 220px;
+}
+
+/* Tape pieces */
+
+.travel-card-tape {
+  position: absolute;
+  width: 70px;
+  height: 18px;
+  background: rgba(245, 239, 220, 0.85);
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.travel-card-tape-top-left {
+  top: 0.35rem;
+  left: 1.6rem;
+  transform: rotate(-7deg);
+}
+
+.travel-card-tape-top-right {
+  top: 0.35rem;
+  right: 1.6rem;
+  transform: rotate(6deg);
+}
+
+/* Card body */
+
+.travel-card-body {
+  padding: 0.9rem 1.1rem 1.2rem;
+}
+
+.travel-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #e1c8a7;
+  margin-bottom: 0.3rem;
+}
+
+.travel-card-location {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.travel-card-date {
+  opacity: 0.9;
+}
+
+.travel-card-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
+  color: #f7e3b1;
+}
+
+.travel-card-snippet {
+  margin: 0 0 0.8rem;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: #f3e6d3;
+}
+
+.travel-card-cta {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.95);
+}
+
+/* Hover */
+
+.travel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.9);
+}
+
+/* Hint text */
+
+.travel-carousel-hint {
+  margin: 0.8rem auto 0;
+  max-width: 48rem;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 194, 123, 0.8);
+}
