@@ -23,7 +23,7 @@ export default function KenyaTrip() {
           <h1 className="travel-post-title">KENYA SUNSETS</h1>
         </div>
 
-        {/* ITINERARY TIMELINE (same structure as Paris, but Kenya text) */}
+        {/* ITINERARY TIMELINE */}
         <section className="travel-itinerary">
           <div className="travel-itinerary-header">
             <h2 className="travel-itinerary-title">Itinerary</h2>
@@ -101,9 +101,9 @@ export default function KenyaTrip() {
               style={{ '--delay': '500ms' }}
             >
               <p className="travel-post-summary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. This
-                trip felt like living inside a nature documentary – dusty roads,
-                orange sunsets and quiet moments watching the sky change.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. This trip
+                felt like living inside a nature documentary – dusty roads, orange
+                sunsets and quiet moments watching the sky change.
               </p>
             </div>
 
@@ -116,7 +116,9 @@ export default function KenyaTrip() {
               <ul className="trip-icon-list">
                 <li className="trip-icon-pill">
                   <span className="trip-icon-emoji">🌍</span>
-                  <span className="trip-icon-text">Kenya · Nairobi & coast</span>
+                  <span className="trip-icon-text">
+                    Kenya · Nairobi & coast
+                  </span>
                 </li>
                 <li className="trip-icon-pill">
                   <span className="trip-icon-emoji">🦒</span>
@@ -166,7 +168,7 @@ export default function KenyaTrip() {
             </figure>
           </div>
 
-          {/* Overlapping mini photos – Kenya uses same system as Paris */}
+          {/* Overlapping mini photos – Kenya uses same system */}
           <div
             className="extra-photo extra-photo-1 collage-piece"
             style={{ '--delay': '650ms' }}
@@ -233,8 +235,8 @@ export default function KenyaTrip() {
           <article className="travel-section" style={{ '--delay': '1250ms' }}>
             <h2 className="travel-section-title">Food</h2>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate. Ugali,
-              chapati, grilled fish by the beach and endless fresh mango juice.
+              Duis aute irure dolor in reprehenderit in voluptate. Ugali, chapati,
+              grilled fish by the beach and endless fresh mango juice.
             </p>
             <div className="section-image-wrapper">
               <img

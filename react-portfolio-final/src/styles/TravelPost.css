@@ -2,7 +2,6 @@
 
 /* --- Keyframe Animations --- */
 
-/* Subtle continuous rotation for small elements */
 @keyframes rotate-subtle {
   0% {
     transform: rotate(0deg);
@@ -12,7 +11,6 @@
   }
 }
 
-/* Subtle continuous bobbing for a light feel */
 @keyframes bob-subtle {
   0% {
     transform: translateY(0);
@@ -25,7 +23,6 @@
   }
 }
 
-/* Pop-in animation for initial load */
 @keyframes collage-pop {
   0% {
     opacity: 0;
@@ -52,13 +49,31 @@
   }
 }
 
-/* --- Base Page Styles --- */
+/* --- Base Page Styles + THEME VARIABLES --- */
 
 .travel-post-page {
+  /* DEFAULT THEME (used if no trip-specific override is set) */
+  --tp-bg-1: #faf3e5;
+  --tp-bg-2: #f3e7d4;
+  --tp-bg-3: #efe1cc;
+
+  --tp-ink-main: #433326;      /* main text */
+  --tp-ink-soft: #6f5536;      /* softer body text */
+  --tp-ink-muted: #7a6042;     /* notes, subtle text */
+
+  --tp-accent-main: #b0443f;   /* big title colour */
+  --tp-accent-secondary: #9b7536; /* headings / labels */
+
+  --tp-paper: #fffdf7;         /* card / polaroid paper */
+  --tp-paper-soft: #fff0cc;    /* title box paper */
+
+  --tp-line: #c9a052;          /* timeline + doodle line + corners */
+  --tp-chip-text: rgba(160, 112, 44, 0.9);
+
   min-height: 100vh;
   padding: 2.5rem 1.4rem 3.5rem;
   background:
-    radial-gradient(circle at top, #faf3e5 0%, #f3e7d4 40%, #efe1cc 100%),
+    radial-gradient(circle at top, var(--tp-bg-1) 0%, var(--tp-bg-2) 40%, var(--tp-bg-3) 100%),
     repeating-linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.12),
@@ -66,7 +81,7 @@
       transparent 1px,
       transparent 22px
     );
-  color: #433326;
+  color: var(--tp-ink-main);
   font-family: Georgia, 'Times New Roman', serif;
 }
 
@@ -124,7 +139,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #b0893f;
+  color: var(--tp-accent-secondary);
 }
 
 .travel-post-back:hover {
@@ -136,13 +151,14 @@
   font-size: 0.8rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(160, 112, 44, 0.9);
+  color: var(--tp-chip-text);
 }
 
 /* Fun Handwritten Title Box */
 
 .handwritten-title-box {
   background: rgba(255, 240, 204, 0.95);
+  background: var(--tp-paper-soft);
   border-radius: 0.8rem;
   padding: 1.2rem 1.8rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -157,7 +173,7 @@
   margin: 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   font-size: clamp(2.5rem, 5vw, 3rem);
-  color: #b0443f;
+  color: var(--tp-accent-main);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -180,13 +196,13 @@
   font-size: 1.15rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #9b7536;
+  color: var(--tp-accent-secondary);
 }
 
 .travel-itinerary-note {
   margin: 0;
   font-size: 0.9rem;
-  color: #7a6042;
+  color: var(--tp-ink-muted);
   opacity: 0.9;
 }
 
@@ -215,6 +231,13 @@
     transparent 6px,
     transparent 12px
   );
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--tp-line),
+    var(--tp-line) 6px,
+    transparent 6px,
+    transparent 12px
+  );
   opacity: 0.9;
 }
 
@@ -232,7 +255,7 @@
   height: 10px;
   border-radius: 999px;
   background: #f7e3b1;
-  border: 1px solid rgba(160, 112, 44, 0.9);
+  border: 1px solid var(--tp-line);
   box-shadow: 0 0 8px rgba(247, 213, 150, 0.7);
 }
 
@@ -241,14 +264,14 @@
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #5a4027;
+  color: var(--tp-ink-main);
 }
 
 .travel-itinerary-text {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.6;
-  color: #6f5536;
+  color: var(--tp-ink-soft);
 }
 
 /* --- Collage Layout --- */
@@ -295,7 +318,7 @@
 }
 
 .polaroid-frame {
-  background: #fffdf7;
+  background: var(--tp-paper);
   border-radius: 0.5rem;
   padding: 0.7rem 0.7rem 1.1rem;
   box-shadow:
@@ -333,7 +356,7 @@
   margin: 0.6rem 0 0;
   font-size: 0.9rem;
   text-align: center;
-  color: #5c4634;
+  color: var(--tp-ink-soft);
 }
 
 /* --- Photo Note (Torn Paper Effect) --- */
@@ -349,7 +372,7 @@
 }
 
 .torn-paper {
-  background: #fffdf7;
+  background: var(--tp-paper);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
   padding: 1.2rem;
   position: relative;
@@ -367,10 +390,10 @@
   height: 10px;
   background: linear-gradient(
     to right,
-    #fffdf7 0%,
+    var(--tp-paper) 0%,
     transparent 2%,
     transparent 98%,
-    #fffdf7 100%
+    var(--tp-paper) 100%
   );
 }
 
@@ -398,7 +421,7 @@
   margin: 0;
   font-size: 1.02rem;
   line-height: 1.9;
-  color: #6f5536;
+  color: var(--tp-ink-soft);
 }
 
 /* --- Icons / Pills --- */
@@ -412,7 +435,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #9b7536;
+  color: var(--tp-accent-secondary);
 }
 
 .trip-icon-list {
@@ -430,10 +453,10 @@
   gap: 0.3rem;
   padding: 0.18rem 0.65rem;
   border-radius: 999px;
-  background: rgba(255, 252, 245, 0.95);
-  border: 1px solid rgba(240, 194, 123, 0.8);
+  background: var(--tp-paper);
+  border: 1px solid var(--tp-line);
   font-size: 0.9rem;
-  color: #5a4027;
+  color: var(--tp-ink-main);
   cursor: default;
   transition: transform 130ms ease, box-shadow 130ms ease;
 }
@@ -461,16 +484,16 @@
   height: 22px;
   background-image: radial-gradient(
       circle at 4px 11px,
-      #c79b4c 0,
-      #c79b4c 1px,
+      var(--tp-line) 0,
+      var(--tp-line) 1px,
       transparent 1px
     ),
     linear-gradient(
       to right,
       transparent 0,
       transparent 6px,
-      #c79b4c 6px,
-      #c79b4c 10px,
+      var(--tp-line) 6px,
+      var(--tp-line) 10px,
       transparent 10px,
       transparent 16px
     );
@@ -488,14 +511,14 @@
 
 .extra-photo-image {
   display: block;
-  width: 17rem; /* adjust for bigger/smaller */
+  width: 17rem;
   max-width: 40vw;
   border-radius: 0.8rem;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
   object-fit: cover;
 }
 
-/* Default positions – tweak these numbers to move them */
+/* Default positions – tuned for Paris / template */
 .extra-photo-1 {
   top: 4%;
   right: 38%;
@@ -506,6 +529,19 @@
   top: 43%;
   right: 27%;
   transform: rotate(3deg);
+}
+
+/* Kenya-specific override for overlapping photos */
+.kenya-trip-page .extra-photo-1 {
+  top: 10%;
+  right: 8%;
+  transform: rotate(-2deg);
+}
+
+.kenya-trip-page .extra-photo-2 {
+  top: 50%;
+  right: 4%;
+  transform: rotate(2deg);
 }
 
 /* --- Main Sections (notes area) --- */
@@ -519,6 +555,7 @@
 
 .travel-section {
   background: rgba(255, 252, 245, 0.9);
+  background: var(--tp-paper);
   border-radius: 0.9rem;
   padding: 1.2rem 1.3rem 1.4rem;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
@@ -537,6 +574,7 @@
   width: 18px;
   height: 18px;
   border: 1px solid rgba(201, 160, 82, 0.6);
+  border-color: var(--tp-line);
 }
 
 .travel-section::before {
@@ -556,14 +594,14 @@
 .travel-section-title {
   margin: 0 0 0.6rem;
   font-size: 1.3rem;
-  color: #5a3f1d;
+  color: var(--tp-accent-secondary);
 }
 
 .travel-section p {
   margin: 0 0 0.6rem;
   font-size: 1.02rem;
   line-height: 1.8;
-  color: #6f5536;
+  color: var(--tp-ink-soft);
 }
 
 /* Specific component for images inside a text block */
@@ -592,7 +630,7 @@
 .travel-post-footer p {
   margin: 0;
   font-size: 0.9rem;
-  color: #8b6b3d;
+  color: var(--tp-ink-muted);
 }
 
 /* --- Small screens tweaks --- */
@@ -610,4 +648,67 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* --- TRIP-SPECIFIC THEMES ---------------------------------- */
+
+/* Paris – rosy & warm */
+.paris-trip-page {
+  --tp-bg-1: #fff4f1;
+  --tp-bg-2: #f9e0da;
+  --tp-bg-3: #f0d3c6;
+
+  --tp-ink-main: #43262a;
+  --tp-ink-soft: #6a4348;
+  --tp-ink-muted: #7f5a5e;
+
+  --tp-accent-main: #c45574;        /* title */
+  --tp-accent-secondary: #a35b52;   /* labels */
+
+  --tp-paper: #fff7f5;
+  --tp-paper-soft: #ffe3dd;
+
+  --tp-line: #d4938a;
+  --tp-chip-text: rgba(164, 85, 103, 0.95);
+}
+
+/* Kenya – earthy & sunsety */
+.kenya-trip-page {
+  --tp-bg-1: #fff8ec;
+  --tp-bg-2: #fbe3bf;
+  --tp-bg-3: #f6cf9b;
+
+  --tp-ink-main: #3f2a17;
+  --tp-ink-soft: #6e4a26;
+  --tp-ink-muted: #8a5a2f;
+
+  --tp-accent-main: #c25b1e;
+  --tp-accent-secondary: #a66b1f;
+
+  --tp-paper: #fff7ea;
+  --tp-paper-soft: #ffe2bf;
+
+  --tp-line: #d28a3c;
+  --tp-chip-text: rgba(157, 92, 31, 0.95);
+}
+
+/* Example for future trip (Mallorca/template) – soft beachy */
+.mallorca-trip-page,
+.trip-template-page {
+  --tp-bg-1: #f3fbff;
+  --tp-bg-2: #d9f0ff;
+  --tp-bg-3: #c5e3f7;
+
+  --tp-ink-main: #20313a;
+  --tp-ink-soft: #395261;
+  --tp-ink-muted: #4f6977;
+
+  --tp-accent-main: #2c7ea8;
+  --tp-accent-secondary: #2c6f88;
+
+  --tp-paper: #f9fdff;
+  --tp-paper-soft: #e6f6ff;
+
+  --tp-line: #5aa9d6;
+  --tp-chip-text: rgba(44, 111, 136, 0.95);
 }
