@@ -4,11 +4,13 @@ import globeBackImage from '../assets/IMG_20251118_150728_778.jpg'
 
 const LOCATIONS = [
   { id: 'uk', label: 'United Kingdom' },
+  { id: 'scotland', label: 'Scotland' },      // 🆕
+  { id: 'iceland', label: 'Iceland' },        // 🆕
   { id: 'poland', label: 'Poland' },
   { id: 'france', label: 'France' },
-  { id: 'spain', label: 'Spain' }, // Now representing Spain and Canaries combined
+  { id: 'spain', label: 'Spain / Canaries' }, // Now representing Spain and Canaries combined
+  { id: 'kenya', label: 'Kenya' },            // 🆕
 ]
-
 export default function AboutSection() {
   return (
     <section className="about-section" id="about">

@@ -1,0 +1,116 @@
+/* src/styles/Contact.css */
+
+.contact-section {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.contact-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(178, 205, 245, 0.8); /* cool accent */
+}
+
+.contact-heading {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.8vw, 2.2rem);
+  letter-spacing: 0.06em;
+  color: #f3e9d9;
+}
+
+/* Icon row */
+
+.contact-icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.contact-icon-link {
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Circular icon look, no hard borders */
+.contact-icon-circle {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 8px 18px rgba(0, 0, 0, 0.6);
+  color: rgba(210, 210, 215, 0.7); /* soft grey */
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.contact-icon-glyph {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+/* Hover / focus → gold */
+.contact-icon-link:hover .contact-icon-circle,
+.contact-icon-link:focus-visible .contact-icon-circle {
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(255, 245, 220, 0.18),
+    rgba(60, 35, 10, 0.9)
+  );
+  box-shadow:
+    0 0 0 1px rgba(240, 194, 123, 0.7),
+    0 10px 22px rgba(0, 0, 0, 0.85);
+  color: #f0c27b; /* gold */
+  transform: translateY(-2px);
+}
+
+/* Active click */
+.contact-icon-link:active .contact-icon-circle {
+  transform: translateY(0);
+  color: #f7d9a0;
+}
+
+/* Small screens */
+
+@media (max-width: 540px) {
+  .contact-icon-row {
+    gap: 1.4rem;
+  }
+
+  .contact-icon-circle {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .contact-icon-glyph {
+    font-size: 1.4rem;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-icon-link,
+  .contact-icon-circle {
+    transition: none !important;
+  }
+}

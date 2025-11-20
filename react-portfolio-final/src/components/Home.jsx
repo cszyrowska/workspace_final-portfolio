@@ -6,6 +6,7 @@ import CurrentWork from './CurrentWork.jsx'
 import ExperienceSection from './ExperienceSection.jsx'
 import AimsSection from './AimsSection.jsx'
 import TravelBlogSection from './TravelBlogSection.jsx'
+import ContactSection from './ContactSection.jsx'
 
 
 
@@ -208,15 +209,9 @@ export default function Home() {
                 {/* Travel blog – image cards linking to full trip pages */}
         <TravelBlogSection />
 
-
-        <section className="placeholder-section" id="contact">
-          <h2>Contact</h2>
-          <p>
-            A simple place for a contact form or email links – the boarding gate
-            for new projects together.
-          </p>
-        </section>
+        <ContactSection />
       </div>
     </main>
+
   )
 }

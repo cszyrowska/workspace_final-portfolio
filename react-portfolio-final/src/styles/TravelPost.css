@@ -653,6 +653,48 @@
 /* --- TRIP-SPECIFIC THEMES ---------------------------------- */
 
 /* Paris – rosy & warm */
+/* Iceland – cold sky & aurora vibes */
+/* Scotland – mossy green & cosy grey */
+.scotland-trip-page {
+  --tp-bg-1: #f4faf7;
+  --tp-bg-2: #d9ebe2;
+  --tp-bg-3: #c3ddd2;
+
+  --tp-ink-main: #22312a;
+  --tp-ink-soft: #3c5347;
+  --tp-ink-muted: #576e63;
+
+  --tp-accent-main: #2f6f4e;        /* title */
+  --tp-accent-secondary: #265741;   /* labels */
+
+  --tp-paper: #f9fdfb;
+  --tp-paper-soft: #e4f2eb;
+
+  --tp-line: #6ea687;
+  --tp-chip-text: rgba(38, 87, 65, 0.95);
+}
+
+
+.iceland-trip-page {
+  --tp-bg-1: #f6fbff;
+  --tp-bg-2: #dfeeff;
+  --tp-bg-3: #c8def5;
+
+  --tp-ink-main: #172535;
+  --tp-ink-soft: #324258;
+  --tp-ink-muted: #546279;
+
+  --tp-accent-main: #3c7fb4;        /* title */
+  --tp-accent-secondary: #2f5f89;   /* labels */
+
+  --tp-paper: #f7fbff;
+  --tp-paper-soft: #e7f3ff;
+
+  --tp-line: #6ba3cf;
+  --tp-chip-text: rgba(47, 95, 137, 0.95);
+}
+
+
 .paris-trip-page {
   --tp-bg-1: #fff4f1;
   --tp-bg-2: #f9e0da;

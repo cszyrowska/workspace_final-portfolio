@@ -249,24 +249,40 @@
 
 /* Individual location angles / distances */
 .globe-location-uk {
-  --angle: -135deg; /* upper-left */
+  --angle: -100deg; /* upper-left */
   --distance: 210px;
 }
 
 .globe-location-poland {
-  --angle: -30deg; /* upper-right */
-  --distance: 210px;
+  --angle: 50deg; /* upper-right */
+  --distance: 180px;
 }
 
 .globe-location-france {
   --angle: -5deg; /* slightly up-right */
-  --distance: 235px;
+  --distance: 150px;
 }
 
 .globe-location-spain {
-  --angle: 155deg; /* down-left */
-  --distance: 245px;
+  --angle: 199deg; /* down-left */
+  --distance: 150px;
 }
+
+.globe-location-scotland {
+  --angle: -80deg; /* above/left of UK */
+  --distance: 225px;
+}
+
+.globe-location-iceland {
+  --angle: -65deg; /* even further up-left */
+  --distance: 205px;
+}
+
+.globe-location-kenya {
+  --angle: 140deg; /* down-right area (Africa-ish) */
+  --distance: 200px;
+}
+
 
 /* Hover effect – glow on globe (still works when front is visible) */
 .globe-wrapper:hover .globe-location-line {

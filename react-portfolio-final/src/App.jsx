@@ -10,6 +10,9 @@ import MallorcaTrip from './Travel/MallorcaTrip.jsx'
 import ChristmasTrip from './Travel/ChristmasTrip.jsx'
 import AsiaTrip from './Travel/AsiaTrip.jsx'
 import KenyaTrip from './Travel/KenyaTrip.jsx'
+import IcelandTrip from './Travel/IcelandTrip.jsx'
+import ScotlandTrip from './Travel/ScotlandTrip.jsx'
+
 
 
 
@@ -30,8 +33,9 @@ export default function App() {
       <Route path="/travel/mallorca" element={<MallorcaTrip />} />
       <Route path="/travel/christmas-trip" element={<ChristmasTrip />} />
       <Route path="/travel/asia" element={<AsiaTrip />} />
-      
-
+    <Route path="/travel/iceland" element={<IcelandTrip />} />
+ <Route path="/travel/scotland" element={<ScotlandTrip />} />
+ 
     </Routes>
   )
 }

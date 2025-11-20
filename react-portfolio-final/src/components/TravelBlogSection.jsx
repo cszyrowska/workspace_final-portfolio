@@ -5,6 +5,29 @@ import '../styles/TravelBlog.css'
 import travelPlaceholder from '../assets/profile.jpg'
 
 const TRIPS = [
+    {
+    id: 'scotland',
+    slug: 'scotland', // 🔗 links to /travel/scotland
+    title: 'Scotland trains & lochs',
+    location: 'Scotland',
+    date: 'Autumn 2025',
+    snippet:
+      'Rainy streets, hilltop views, long train routes and quiet lochs that feel like a painting.',
+    image: travelPlaceholder, // swap for a Scotland thumbnail later
+  },
+
+  
+  {
+    id: 'iceland',
+    slug: 'iceland', // 🔗 links to /travel/iceland
+    title: 'Iceland lights',
+    location: 'Iceland',
+    date: 'Winter 2024',
+    snippet:
+      'Snow, hot pools, black beaches and nights spent looking up at the sky.',
+    image: travelPlaceholder, // swap for an Iceland thumbnail later
+  },
+  
   {
     id: 'kenya',
     slug: 'kenya', // links to /travel/kenya
