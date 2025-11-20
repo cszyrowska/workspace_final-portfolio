@@ -1,7 +1,18 @@
 // src/Travel/ScotlandTrip.jsx
 import { Link } from 'react-router-dom'
 import '../styles/TravelPost.css'
-import travelPlaceholder from '../assets/profile.jpg' // swap for real Scotland photos later
+
+import travelPlaceholder from '../assets/profile.jpg' // not used now but fine
+import castleruins from '../assets/Scotland/Castleruins.jpg'
+import cows from '../assets/Scotland/cows.jpg'
+import moors from '../assets/Scotland/moors.jpg'
+import snowmountain from '../assets/Scotland/snowmountain.jpg'
+import sunset from '../assets/Scotland/Scotsunset.jpg'
+import train from '../assets/Scotland/train.jpg'
+import carwindow from '../assets/Scotland/carwindow.jpg'
+import water from '../assets/Scotland/miniwaterfall.jpg'
+import sky from '../assets/Scotland/sky.jpg'
+import van from '../assets/Scotland/van.jpg'
 
 export default function ScotlandTrip() {
   return (
@@ -20,72 +31,8 @@ export default function ScotlandTrip() {
           className="handwritten-title-box collage-piece"
           style={{ '--delay': '100ms' }}
         >
-          <h1 className="travel-post-title">SCOTLAND TRAINS & LOCHS</h1>
+          <h1 className="travel-post-title">SCOTLAND TRAINS &amp; LOCHS</h1>
         </div>
-
-        {/* ITINERARY TIMELINE */}
-        <section className="travel-itinerary">
-          <div className="travel-itinerary-header">
-            <h2 className="travel-itinerary-title">Itinerary</h2>
-            <p className="travel-itinerary-note">
-              Swap these placeholders for your actual trains, hostels and hill
-              walks once the trip is real.
-            </p>
-          </div>
-
-          <div className="travel-itinerary-timeline">
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 1 · Edinburgh arrival
-              </p>
-              <p className="travel-itinerary-text">
-                Train into Waverley, first sight of the castle, dragging bags up
-                a hill and finding a tiny place for dinner.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 2 · Old town & viewpoints
-              </p>
-              <p className="travel-itinerary-text">
-                Cobbled streets, closes and staircases, climbing up to a
-                viewpoint to see roofs, sea and hills all in one frame.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 3 · Highlands / loch day trip
-              </p>
-              <p className="travel-itinerary-text">
-                Bus out of the city, long quiet roads, mirror-flat water and
-                mountains that make you feel tiny.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 4 · Trains & small towns
-              </p>
-              <p className="travel-itinerary-text">
-                Sitting by the train window watching fields, sheep and sudden
-                bits of coastline blur past; stopping in a smaller town for a
-                slow walk.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 5 · Last wander
-              </p>
-              <p className="travel-itinerary-text">
-                One more loop through favourite streets, a bookshop stop and a
-                final look at the city from a hill before heading home.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* HERO COLLAGE */}
         <section className="travel-collage">
@@ -97,12 +44,12 @@ export default function ScotlandTrip() {
             >
               <div className="polaroid-frame small">
                 <img
-                  src={travelPlaceholder}
-                  alt="Edinburgh street"
+                  src={snowmountain}
+                  alt="Snow on Scottish mountains"
                   className="polaroid-image"
                 />
                 <figcaption className="polaroid-caption">
-                  First evening in Edinburgh
+                  Snow in the mountains
                 </figcaption>
               </div>
             </figure>
@@ -113,9 +60,10 @@ export default function ScotlandTrip() {
               style={{ '--delay': '500ms' }}
             >
               <p className="travel-post-summary">
-                This trip feels like layers: stone, history, soft rain, trains,
-                and then suddenly big empty landscapes. City days, loch days and
-                long walks that end in a warm pub or hostel kitchen.
+                I went to Scotland for a week back in 2023. I fell inlove with
+                its freeing scent and nature from its clean air and surrounding
+                wildlife. So much so, I came back for a longer roadtrip with my
+                family. This is a collage of both trips combined...
               </p>
             </div>
 
@@ -128,17 +76,19 @@ export default function ScotlandTrip() {
               <ul className="trip-icon-list">
                 <li className="trip-icon-pill">
                   <span className="trip-icon-emoji">🏴</span>
-                  <span className="trip-icon-text">
-                    Scotland · Edinburgh & Highlands
-                  </span>
+                  <span className="trip-icon-text">Scotland · Sky Island</span>
                 </li>
                 <li className="trip-icon-pill">
                   <span className="trip-icon-emoji">🚆</span>
-                  <span className="trip-icon-text">Train windows & playlists</span>
+                  <span className="trip-icon-text">
+                    Roadtrip views and camping
+                  </span>
                 </li>
                 <li className="trip-icon-pill">
                   <span className="trip-icon-emoji">🌧️</span>
-                  <span className="trip-icon-text">Soft rain and cosy layers</span>
+                  <span className="trip-icon-text">
+                    Soft rain and cosy layers
+                  </span>
                 </li>
               </ul>
             </div>
@@ -152,12 +102,12 @@ export default function ScotlandTrip() {
             >
               <div className="polaroid-frame">
                 <img
-                  src={travelPlaceholder}
-                  alt="Highlands landscape"
+                  src={castleruins}
+                  alt="Scottish castle ruins"
                   className="polaroid-image"
                 />
                 <figcaption className="polaroid-caption">
-                  Misty hills and quiet water
+                  mystical castle ruins
                 </figcaption>
               </div>
             </figure>
@@ -169,8 +119,8 @@ export default function ScotlandTrip() {
             >
               <div className="polaroid-frame small">
                 <img
-                  src={travelPlaceholder}
-                  alt="Loch and trees"
+                  src={sunset}
+                  alt="Loch and trees at sunset"
                   className="polaroid-image"
                 />
                 <figcaption className="polaroid-caption">
@@ -186,8 +136,8 @@ export default function ScotlandTrip() {
             style={{ '--delay': '650ms' }}
           >
             <img
-              src={travelPlaceholder}
-              alt="Close-up detail"
+              src={cows}
+              alt="Highland cows"
               className="extra-photo-image"
             />
           </div>
@@ -197,8 +147,8 @@ export default function ScotlandTrip() {
             style={{ '--delay': '750ms' }}
           >
             <img
-              src={travelPlaceholder}
-              alt="Stairs or street detail"
+              src={moors}
+              alt="Scottish moors"
               className="extra-photo-image"
             />
           </div>
@@ -210,21 +160,22 @@ export default function ScotlandTrip() {
         <section className="travel-sections">
           {/* Arrival & Transport */}
           <article className="travel-section" style={{ '--delay': '800ms' }}>
-            <h2 className="travel-section-title">Arrival &amp; transport</h2>
+            <h2 className="travel-section-title">Arrival </h2>
             <p>
-              Trains, trams and buses becoming familiar; learning station names,
-              figuring out which side of the street the bus actually stops on.
+              Both times I went, we went by car. My first trip was to a
+              beautiful cottage by a loch... and the second was camping in a
+              van with my family. Both transport and stays I would never change.
             </p>
             <div className="section-image-wrapper">
               <img
-                src={travelPlaceholder}
-                alt="Train into the city"
+                src={carwindow}
+                alt="Car window view in Scotland"
                 className="section-inline-image"
               />
             </div>
             <p>
-              There&apos;s something very calming about watching the landscape
-              change from a train window while your playlist loops.
+              It gave me two different perspectives on Scotland - one settled in
+              a heated home and the other snuggled in my blankets.
             </p>
           </article>
 
@@ -232,64 +183,80 @@ export default function ScotlandTrip() {
           <article className="travel-section" style={{ '--delay': '950ms' }}>
             <h2 className="travel-section-title">The little moments</h2>
             <p>
-              A warm café after walking in the rain, sharing chips under a tiny
-              shelter, laughing at how wind ruins every photo on a viewpoint.
+              So many memories come paired with these trips. The first trip - I
+              spent with my partner. We saw a thick blanket of snow for the
+              first time in a long while, hiked the mountains to view the
+              sunset, and faced the harsh cold waters in a wild-waters dip. We
+              videoed our time spent, hoping to come back one day.
             </p>
             <p>
-              These small scenes sit in my head just as strongly as castles and
-              mountains.
+              My second trip was filled with the laughter and love from my
+              family. My family&apos;s van trailed behind my aunt&apos;s camper
+              as we battled the harsh winds of Sky Island, made pit-stops to
+              feed Highlands cows, and ended nights with card games and dinners
+              together. Traveling together was such joy, reminding me how
+              grateful I am for my family.
             </p>
           </article>
 
           {/* Favourite corners */}
           <article className="travel-section" style={{ '--delay': '1100ms' }}>
-            <h2 className="travel-section-title">Favourite corners</h2>
+            <h2 className="travel-section-title">Sky Island</h2>
             <p>
-              A side street with old bookshops, a stretch of path along the
-              water where everything goes quiet, and a bit of hillside where you
-              can see the whole city at once.
+              Sky island was beautiful. Although during the time we where there
+              it rained 90% of the time, the feel of being on a island with
+              barely any people was refreshing and relaxing.
             </p>
             <div className="section-image-wrapper">
               <img
-                src={travelPlaceholder}
-                alt="View over the city"
+                src={sky}
+                alt="Sky Island landscape"
                 className="section-inline-image"
               />
             </div>
-            <p>
-              The Highlands also feel like a favourite corner: big, empty and
-              kind of grounding.
-            </p>
           </article>
 
-          {/* Food */}
+          {/* Hogwarts Train */}
           <article className="travel-section" style={{ '--delay': '1250ms' }}>
-            <h2 className="travel-section-title">Food</h2>
+            <h2 className="travel-section-title">Hogwarts Train</h2>
             <p>
-              Soups, pies, hot drinks and any dessert that comes with custard.
-              Simple, filling food tastes extra good after walking up hills in
-              the wind.
+              Ever since I were a little girl, my household was always marked by
+              the famous movie series &apos;Harry Potter&apos;. And I myself was
+              obsessed by the series so seeing the original tracks and train
+              brought me back to youth.
             </p>
             <div className="section-image-wrapper">
               <img
-                src={travelPlaceholder}
-                alt="Comfort food on a table"
+                src={train}
+                alt="Hogwarts style train in Scotland"
                 className="section-inline-image"
               />
             </div>
             <p>
-              Supermarket dinners in hostels also become a core part of the
-              story.
+              The steam created clouds and the clatter of wheel and track and
+              honk filled the air. And then once again I also heard the Harry
+              Potter theme tune playing and little me itching in excitement for
+              the next adventure.
             </p>
           </article>
 
-          {/* Highlights */}
+          {/* Castles */}
           <article className="travel-section" style={{ '--delay': '1400ms' }}>
-            <h2 className="travel-section-title">Highlights</h2>
+            <h2 className="travel-section-title">Castles</h2>
             <p>
-              That first view of the castle, a loch at golden hour, train tracks
-              cutting through fog and laughing about getting slightly lost on a
-              hill trail.
+              When I went with my partner for the first time, we spent a good
+              amount of our time there visiting the famous Scottish castles.
+              Whether they where renewed in a museum, or protected within the
+              woods... my jaw dropped at every corner. I was taken to every era
+              within Scottish heritage and history and it was fascinating.
+            </p>
+            <p>
+              I still remember standing facing a loch, the grand castle behind
+              me and my eyes looking out for the Lochness monster in front of
+              me. Of course, I did not see any monster... but I did see
+              extraordinary swords and armour, felt old mossy brick that still
+              hold up castle walls, and heard scottish history and folk lore.
+              Scotland won &apos;best castles&apos; for me!
             </p>
           </article>
 
@@ -297,23 +264,45 @@ export default function ScotlandTrip() {
           <article className="travel-section" style={{ '--delay': '1550ms' }}>
             <h2 className="travel-section-title">Next time I visit</h2>
             <ul>
-              <li>Spend longer in the Highlands or on the islands.</li>
-              <li>Find a local dance class or community event.</li>
-              <li>Try a proper multi-day walk with a backpack.</li>
+              <li>Try traditional Haggis! - I was too scared last time</li>
+              <li>Hike up Ben Nevis</li>
+              <li>Perhaps book a seat WITHIN the famous Hogwarts Train</li>
             </ul>
             <p style={{ marginTop: '0.8rem' }}>
               Scotland feels like the kind of place you return to in different
-              seasons and different versions of yourself.
+              seasons and in different versions of yourself. I hope I will be able 
+              to go back there again.. It is one of those places that you could go for a 
+              holiday that does not actually feel like your typical holiday - motion-packed, 
+              chaotic and pressuring to have loads of fun. Scotland is a stress-free, 
+              effortless get away from the business of real life. It is a refuge into 
+              silence, clean-air, and magic... whether that is folk tails or harry potter, 
+              Scotland has something for everyone looking for some peace and quiet. 
             </p>
           </article>
         </section>
 
-        <footer className="travel-post-footer">
-          <p>
-            When you have real Scotland photos and notes, just replace the
-            placeholders and let this page become its own scrapbook chapter.
-          </p>
-        </footer>
+        {/* PHOTO GALLERY – divider + two big slanted photos */}
+        <section className="travel-gallery">
+          <div className="travel-gallery-grid">
+            <figure className="travel-gallery-item gallery-item-1">
+              <img
+                src={van}
+                alt="Family van parked in Scotland"
+                className="travel-gallery-image"
+              />
+            </figure>
+
+            <figure className="travel-gallery-item gallery-item-2">
+              <img
+                src={water}
+                alt="Mini waterfall in the Highlands"
+                className="travel-gallery-image"
+              />
+            </figure>
+          </div>
+        </section>
+
+        
       </div>
     </main>
   )

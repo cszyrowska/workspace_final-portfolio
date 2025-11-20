@@ -103,13 +103,12 @@ export default function Home() {
 
               <p className="hero-copy">
                 I weave stories through movement, visuals, and the web – blending
-                a love for travel, vintage objects, and thoughtful interaction
+                a love for travel, and thoughtful interaction
                 into everything I create.
               </p>
 
               <div className="hero-meta">
                 <span className="meta-pill">Based in Plymouth, UK</span>
-                <span className="meta-pill">Working worldwide</span>
               </div>
             </div>
           </section>
@@ -124,7 +123,7 @@ export default function Home() {
                     <a href="#about" className="passport-link">
                       <span className="passport-main">About me</span>
                       <span className="passport-sub">
-                        Story, roots, and what quietly drives me.
+                        A small introduction to who I am
                       </span>
                     </a>
                   </li>
@@ -134,7 +133,7 @@ export default function Home() {
                         Current work and service
                       </span>
                       <span className="passport-sub">
-                        What I&apos;m building and how we can collaborate.
+                        What I&apos;m building and how I&apos;m gaining experience.
                       </span>
                     </a>
                   </li>
@@ -159,10 +158,10 @@ export default function Home() {
                   <li>
                     <a href="#blog" className="passport-link">
                       <span className="passport-main">
-                        Dance and travel blog
+                        travel blog
                       </span>
                       <span className="passport-sub">
-                        Movement, cities, and thoughts from the road.
+                        My biggest passion - travel. See where I have been and plan to go
                       </span>
                     </a>
                   </li>
@@ -178,7 +177,7 @@ export default function Home() {
 
                 <div className="passport-stamp-row">
                   <span className="stamp-dot" />
-                  <span className="stamp-label">Open for collaborations</span>
+                  <span className="stamp-label">Open for collaborations!</span>
                 </div>
               </div>
             </div>

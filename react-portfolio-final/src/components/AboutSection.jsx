@@ -15,7 +15,7 @@ export default function AboutSection() {
   return (
     <section className="about-section" id="about">
       <header className="about-header">
-        <h2 className="about-heading">About me.</h2>
+        <h2 className="about-heading">About me</h2>
         <p className="about-intro">
           I&apos;m a designer and dancer who loves turning small details into
           stories &mdash; whether that&apos;s a movement phrase, a web layout,
@@ -80,17 +80,19 @@ export default function AboutSection() {
         {/* Right: Side text */}
         <div className="about-side-copy">
           <p>
-            I grew up between places and languages, and travel has always been
-            tied to how I see myself. Poland, the UK, Spain, and France each
-            hold their own memories: family, rehearsals, late-night buses, and
-            small moments that quietly changed how I move through the world.
+            My name is Cecylia, a 18-year old creative who loves sitting 
+            at the crossroads of art and people. Currently taking a gap year, I 
+            love mixing cosy things with big dreams. My love for reading has 
+            turned me into a storyteller in my own right, my love for dance 
+            lets me pour that creativity into movement, and my love for learning 
+            keeps me constantly collecting new ideas to fold back into everything I do.
+
           </p>
           <p>
-            That mix shows up in my work. I like interfaces that feel like
-            maps, stories that unfold over time, and designs that invite people
-            to explore rather than rush. Whether it&apos;s a page, a piece of
-            choreography, or a new city, I&apos;m always looking for rhythm,
-            atmosphere, and a sense of journey.
+            However, traveling has always had a special place in my heart. My travels 
+            have shaped who I am today, especially my Kenya trip in 2023, and are
+            the strongest force pushing me out of my comfort zone, stretching my 
+            worldview, and inspiring the way I live, learn and create. 
           </p>
         </div>
       </div>

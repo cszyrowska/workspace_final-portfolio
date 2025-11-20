@@ -656,22 +656,22 @@
 /* Iceland – cold sky & aurora vibes */
 /* Scotland – mossy green & cosy grey */
 .scotland-trip-page {
-  --tp-bg-1: #f4faf7;
-  --tp-bg-2: #d9ebe2;
-  --tp-bg-3: #c3ddd2;
+  --tp-bg-1: #3F4E40;
+  --tp-bg-2: #2B3E34;
+  --tp-bg-3: #546A50;
 
-  --tp-ink-main: #22312a;
-  --tp-ink-soft: #3c5347;
-  --tp-ink-muted: #576e63;
+  --tp-ink-main: #0b1a13;
+  --tp-ink-soft: #131d18;
+  --tp-ink-muted: #06160e;
 
-  --tp-accent-main: #2f6f4e;        /* title */
-  --tp-accent-secondary: #265741;   /* labels */
+  --tp-accent-main: #0a1610;        /* title */
+  --tp-accent-secondary: #0b1611;   /* labels */
 
-  --tp-paper: #f9fdfb;
-  --tp-paper-soft: #e4f2eb;
+  --tp-paper: #546A50;
+  --tp-paper-soft: #546A50;
 
-  --tp-line: #6ea687;
-  --tp-chip-text: rgba(38, 87, 65, 0.95);
+  --tp-line: #173524;
+  --tp-chip-text: rgba(16, 39, 29, 0.95);
 }
 
 
@@ -754,3 +754,42 @@
   --tp-line: #5aa9d6;
   --tp-chip-text: rgba(44, 111, 136, 0.95);
 }
+
+/* --- SCOTLAND GALLERY --- */
+
+.travel-gallery {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+.travel-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+}
+
+.travel-gallery-item {
+  position: relative;
+  max-width: 420px;              /* controls how big they can get */
+  transform-origin: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.travel-gallery-image {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Slanted angles for your two photos */
+.gallery-item-1 {
+  transform: rotate(-4deg);
+}
+
+.gallery-item-2 {
+  transform: rotate(3deg);
+}
+

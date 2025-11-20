@@ -61,24 +61,17 @@ export default function Intro({ onEnter, onFinish }) {
         <div className="intro-inner">
           <p className="intro-chip">Portfolio entryway</p>
           <h1 className="intro-title">
-            Soft,
-            <span>glowy</span>
-            little corner of the internet.
+            Cecylia Szyrowska
           </h1>
           <p className="intro-text">
-            Lanterns, travel, code, dance. This is the cosy front door into the
-            projects I&apos;ve been building and the places that shaped them.
+            And my soft, glowy little corner of the internet
           </p>
 
           <button className="intro-button" onClick={triggerEnter}>
             Enter portfolio
           </button>
 
-          <p className="intro-hint">
-            The lantern strings stay pinned to the top.
-            <br />
-            Fireflies and wind are here just for fun ✨
-          </p>
+        
         </div>
       </main>
     </div>
