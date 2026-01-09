@@ -197,16 +197,16 @@ export default function Home() {
 
         {/* Current work (only what you’re doing now) */}
         <CurrentWork />
-
+ 
         {/* Work experience timeline */}
         <ExperienceSection />
-
+{/* Travel blog – image cards linking to full trip pages */}
+        <TravelBlogSection />
                 {/* Aims & aspirations – interactive future routes */}
         <AimsSection />
 
 
-                {/* Travel blog – image cards linking to full trip pages */}
-        <TravelBlogSection />
+               
 
         <ContactSection />
       </div>

@@ -1,308 +1,384 @@
 // src/Travel/ScotlandTrip.jsx
 import { Link } from 'react-router-dom'
 import '../styles/TravelPost.css'
-
-import travelPlaceholder from '../assets/profile.jpg' // not used now but fine
-import castleruins from '../assets/Scotland/Castleruins.jpg'
-import cows from '../assets/Scotland/cows.jpg'
-import moors from '../assets/Scotland/moors.jpg'
-import snowmountain from '../assets/Scotland/snowmountain.jpg'
-import sunset from '../assets/Scotland/Scotsunset.jpg'
-import train from '../assets/Scotland/train.jpg'
+import travelPlaceholder from '../assets/profile.jpg'
 import carwindow from '../assets/Scotland/carwindow.jpg'
-import water from '../assets/Scotland/miniwaterfall.jpg'
+import castle from '../assets/Scotland/Castleruins.jpg'
+import cows from '../assets/Scotland/cows.jpg'
+import waterfall from '../assets/Scotland/miniwaterfall.jpg'
+import moors from '../assets/Scotland/moors.jpg'
+import sun from '../assets/Scotland/Scotsunset.jpg'
 import sky from '../assets/Scotland/sky.jpg'
+import snow from '../assets/Scotland/snowmountain.jpg'
+import train from '../assets/Scotland/train.jpg'
 import van from '../assets/Scotland/van.jpg'
+import cottage from '../assets/Scotland/cottage.jpg'
+import island from '../assets/Scotland/island.jpg'
+import morning from '../assets/Scotland/morning.jpg'
+import selfie from '../assets/Scotland/selfie.jpg'
+import vanlife from '../assets/Scotland/vanlife.jpg'
+import berries from '../assets/Scotland/berries.jpg'
+import wall from '../assets/Scotland/wall.jpg'
+
+function LanternMark() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 2c2.8 0 5 2.2 5 5v2.1c0 .7.3 1.3.8 1.8l.5.5c.4.4.7 1 .7 1.6V17c0 2.2-1.8 4-4 4H9c-2.2 0-4-1.8-4-4v-2.9c0-.6.3-1.2.7-1.6l.5-.5c.5-.5.8-1.1.8-1.8V7c0-2.8 2.2-5 5-5Z"
+        fill="currentColor"
+        opacity="0.9"
+      />
+      <path
+        d="M9.2 7.2c.6-.8 1.5-1.2 2.8-1.2s2.2.4 2.8 1.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+      <path
+        d="M12 10.2c.9 1 .9 1.7 0 2.7c-.9-1-.9-1.7 0-2.7Z"
+        fill="#ffffff"
+        opacity="0.35"
+      />
+    </svg>
+  )
+}
 
 export default function ScotlandTrip() {
   return (
     <main className="travel-post-page scotland-trip-page">
       <div className="travel-post-inner">
-        {/* Top navigation + label */}
-        <header className="travel-post-top">
-          <Link to="/" className="travel-post-back">
-            🡐 Back to portfolio
+        {/* Top bar */}
+        <div className="travel-topbar">
+          <Link to="/" className="travel-back">
+            ← Back to portfolio
           </Link>
-          <p className="travel-post-chip-main">Travel journal · Autumn 2025</p>
-        </header>
 
-        {/* Title */}
-        <div
-          className="handwritten-title-box collage-piece"
-          style={{ '--delay': '100ms' }}
-        >
-          <h1 className="travel-post-title">SCOTLAND TRAINS &amp; LOCHS</h1>
+          <div className="travel-meta">
+            <span className="travel-chip">Scotland</span>
+            <span className="travel-chip">Cottage + Van life</span>
+            <span className="travel-chip">Two trips</span>
+          </div>
         </div>
 
-        {/* HERO COLLAGE */}
-        <section className="travel-collage">
-          <div className="collage-column collage-column-left">
-            {/* Small polaroid */}
-            <figure
-              className="collage-piece collage-photo small-shift"
-              style={{ '--delay': '300ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={snowmountain}
-                  alt="Snow on Scottish mountains"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Snow in the mountains
-                </figcaption>
-              </div>
-            </figure>
+        {/* Header */}
+        <header className="travel-header">
+          <div className="travel-kicker">
+            <LanternMark />
+            Travel Journal
+          </div>
 
-            {/* Torn-paper summary */}
-            <div
-              className="collage-piece torn-paper"
-              style={{ '--delay': '500ms' }}
-            >
-              <p className="travel-post-summary">
-                I went to Scotland for a week back in 2023. I fell inlove with
-                its freeing scent and nature from its clean air and surrounding
-                wildlife. So much so, I came back for a longer roadtrip with my
-                family. This is a collage of both trips combined...
+          <h1 className="travel-title">Cottages to Van Life: Two Ways of Loving Scotland</h1>
+
+          <p className="travel-subtitle">
+            A comparison of two ways I visited Scotland : Living slowly, and moving fast.
+          </p>
+        </header>
+
+        {/* Hero */}
+        <section className="travel-hero">
+          <div className="travel-hero-frame">
+            <img
+              src={train}
+              alt="Scotland landscape hero"
+              className="travel-hero-image"
+            />
+          </div>
+        </section>
+
+        {/* Body (FULL WIDTH) */}
+        <section className="travel-body travel-body-full">
+          <article className="travel-article">
+            <div className="travel-rule" />
+
+            {/* INTRO */}
+            <section className="travel-section">
+              <p className="travel-intro">
+                I have been to Scotland twice now, and they were both completely different experiences.
+                However, if you were to ask me which one I preferred or enjoyed more, I couldn’t tell you.
               </p>
-            </div>
 
-            {/* Pills */}
-            <div
-              className="collage-piece collage-icons"
-              style={{ '--delay': '700ms' }}
-            >
-              <p className="collage-icons-label">Trip snapshots</p>
-              <ul className="trip-icon-list">
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🏴</span>
-                  <span className="trip-icon-text">Scotland · Sky Island</span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🚆</span>
-                  <span className="trip-icon-text">
-                    Roadtrip views and camping
-                  </span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🌧️</span>
-                  <span className="trip-icon-text">
-                    Soft rain and cosy layers
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="collage-column collage-column-right">
-            {/* Main polaroid */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '400ms' }}
-            >
-              <div className="polaroid-frame">
-                <img
-                  src={castleruins}
-                  alt="Scottish castle ruins"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  mystical castle ruins
-                </figcaption>
+              {/* Float image RIGHT beside intro paragraphs */}
+              <div className="travel-image-float right">
+                <img src={moors} alt="Loch / calm landscape" />
               </div>
-            </figure>
 
-            {/* Second polaroid */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '600ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={sunset}
-                  alt="Loch and trees at sunset"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Lochside pause
-                </figcaption>
+              <p className="travel-p">
+                They were both so fun and nostalgic, and now Scotland, to me, is an easy escape route away from the
+                busyness and rush of the city. I may not live in a large city, but it can still get overwhelming and
+                feel like you have no room to breathe.
+              </p>
+
+              <p className="travel-p">
+                Scotland, I realised, was a safe haven where you can breathe — and deeply — not only because there are
+                fewer people around you, but also because the air is genuinely crisper and cleaner.
+              </p>
+            </section>
+
+            {/* TRIP ONE */}
+            <section className="travel-section">
+              <h2 className="travel-h2">Trip one — cottage life</h2>
+
+              {/* Float image LEFT for this section */}
+              <div className="travel-image-float">
+                <img src={cottage} alt="Cottage life / view from the window" />
               </div>
-            </figure>
-          </div>
 
-          {/* Overlapping mini photos */}
-          <div
-            className="extra-photo extra-photo-1 collage-piece"
-            style={{ '--delay': '650ms' }}
-          >
-            <img
-              src={cows}
-              alt="Highland cows"
-              className="extra-photo-image"
-            />
-          </div>
+              <p className="travel-p">
+                The first time I went to Scotland was with my partner and some of his family. We had a beautiful
+                cottage that was probably placed in the most perfect area. In front of us was a large and vast loch,
+                to the left was a forest, and to the right a great mountain.
+              </p>
 
-          <div
-            className="extra-photo extra-photo-2 collage-piece"
-            style={{ '--delay': '750ms' }}
-          >
-            <img
-              src={moors}
-              alt="Scottish moors"
-              className="extra-photo-image"
-            />
-          </div>
+              <p className="travel-p">
+                My week here was filled with serenity and quiet. Slow mornings won over my busy early mornings back at
+                home any day. During the day, we would explore forests, drive to beaches, and visit castles.
+              </p>
 
-          <div className="collage-doodle-line" />
+              <p className="travel-p">
+                In the forests, I was shocked to find how many castle ruins we came across. Now, I know that Scotland
+                is known for its castles, but they aren’t exaggerating when they say that these castles are everywhere.
+              </p>
+
+              {/* Full-width image break (kept, but smaller via CSS max-height) */}
+              <div className="travel-image-block">
+                <img
+                  src={castle}
+                  alt="Castle ruins / history texture"
+                  className="travel-image"
+                />
+              </div>
+
+              <p className="travel-p">
+                I really did feel like I was taken back in time when I stepped into these castles — whether they were
+                ruins or turned into museums. It was a completely different energy, but both felt real and authentic
+                and were reminders of how long humans have been on this planet and how much society has evolved.
+              </p>
+
+              <p className="travel-p">
+                I would say that I would have loved to live in these castles, but then I get reminded of all the wars,
+                battles, and raids that happened, and suddenly the life of a princess does not seem so glamorous anymore.
+                If you are looking for history, Scotland is the place to go.
+              </p>
+
+              {/* Float image RIGHT near Nessie paragraph */}
+              <div className="travel-image-float right">
+                <img src={sun} alt="Loch Ness / moody water" />
+              </div>
+
+              <p className="travel-p">
+                And then there’s the mystery of the Loch Ness Monster. I like to think that I am pretty open to magic,
+                fairytales, and folklore, but of course there comes a sense of maturity to those things when you grow up.
+                However, I still found myself staring into the lochs, squinting my eyes at any sudden movement in the water
+                and asking, “What if…?”.
+              </p>
+
+              <p className="travel-p">
+                I mean, what’s more believable? A large, long-necked, hump-backed eel/seal-looking monster that swims in deep
+                water… or an incredibly long-necked horse with spots and a purple tongue? I digress.
+              </p>
+
+              <p className="travel-p">
+                So, Scotland with my partner wasn’t all peaceful walks and portals into history — we also challenged ourselves,
+                and I must say Scotland is the place to do it.
+              </p>
+
+              {/* Float image LEFT near sunrise / hill climb */}
+              <div className="travel-image-float">
+                <img src={selfie} alt="Sunrise hill / early morning climb" />
+              </div>
+
+              <p className="travel-p">
+                We woke up one morning around 5am (oof) to climb a nearby hill to watch the sunrise. Romantic, is it not?
+                Well, if you include the fact that the wind was so strong you could lean on it like Michael Jackson…
+                it was still romantic for me.
+              </p>
+
+              <p className="travel-p">
+                The early wake-up and the harsh weather — I had to wear three layers over my ears and they still were in pain —
+                may not be everyone’s cup of tea, but if you were up on that mountain, looking over the villages with houses just
+                starting to turn their lights on, and then watching the sun rise over the horizon and light up the lochs,
+                my head on my partner’s shoulder, it would all be worth it.
+              </p>
+
+              <p className="travel-p">And I would do it over and over again if I could.</p>
+
+              <p className="travel-p">
+                I find a real beauty and joy in people-watching, so being so far away yet so close to these small clusters of houses —
+                with families waking up, starting their cars after a cold night, making coffee, or walking their dogs first thing —
+                was the most perfect start to my day.
+              </p>
+
+              <p className="travel-p">
+                Scotland’s weather is nothing to joke about. We saw storms, sunshine, and even snow, but that only created more memories,
+                like seeing my boyfriend’s dog get excited with us when we flung ourselves into deep snow (which hurt, because it was more
+                ice than snow).
+              </p>
+
+              <p className="travel-p">
+                If I could live in Scotland, I think I would make being up high and watching everything and everyone wake up part of my daily
+                morning routine and playing house made me want to create that reality so badly.
+              </p>
+
+              {/* Float image RIGHT near food / routine */}
+              <div className="travel-image-float right">
+                <img src={snow} alt="Village shop / cosy dinner moment" />
+              </div>
+
+              <p className="travel-p">
+                We took on many more challenges, from dipping into an ice-cold loch to creating a five-star dinner with resources sourced from
+                the only shop in our village (potato waffles, steak, and corn). Yes, it was a corner shop, and I think that unique experience
+                of almost having a routine and lifestyle made my trip to Scotland so special.
+              </p>
+
+              <p className="travel-p">
+                Being able to spend it with my partner was unforgettable — the laughs when someone slipped on wet grass, or when someone (me)
+                burnt the pancakes filled the space.
+              </p>
+
+              <p className="travel-p">
+                Outside, there were no cars, no hustle and bustle — only birds. Having the chance to plan our adventure and choose between silence
+                and peace or challenge and opportunity was a privilege, and I created memories I will never forget.
+              </p>
+            </section>
+
+            {/* TRIP TWO */}
+            <section className="travel-section">
+              <h2 className="travel-h2">Trip two — van life + family</h2>
+
+              {/* Float image LEFT at start of trip two */}
+              <div className="travel-image-float">
+                <img src={van} alt="Van life / on the road" />
+              </div>
+
+              <p className="travel-p">
+                The second time I went to Scotland, I had the opportunity to spend it with my family. This included my parents, sisters, and my aunt’s
+                family. Not only was this different in company, but we also road-tripped around Scotland.
+              </p>
+
+              <p className="travel-p">
+                My aunt and her family had a wonderful van-life home with a kitchen, beds, and space to store clothes, while my family converted the back
+                seats into a bed to sleep in at night. Both families, I would say, travelled in style.
+              </p>
+
+              <p className="travel-p">
+                There’s a perfect beauty I find in both living stationary and being on the road. Staying in a cottage was wonderful, but waking up and
+                stepping outside to find yourself next to a completely new and stunning location sparked a different, unmatchable sense of adventure.
+              </p>
+
+              {/* Float image RIGHT for “new place each night” vibe */}
+              <div className="travel-image-float right">
+                <img src={waterfall} alt="New morning view / campsite spot" />
+              </div>
+
+              <p className="travel-p">
+                Yes, sometimes the view was just a road, but the memories my sisters, cousin, and I shared — walking along paths just down from the vans to
+                find magical spots to go Nessie-hunting, skimming stones across lochs, or taking quiet morning and evening walks in a new area each night —
+                were priceless.
+              </p>
+
+              <p className="travel-p">
+                One night, the adults would chatter in one van while the kids played UNO in the other, and the next thing we knew we were on the road again,
+                anticipating our next place to wake up to.
+              </p>
+
+              <p className="travel-p">
+                Of course, we explored castles again, but what made this trip different was visiting the Isle of Skye. We may or may not have accidentally
+                arrived during a period of intense rain and storms, but that only made the experience more adventurous.
+              </p>
+
+              <p className="travel-p">
+                The landscape was vast and rugged, the mountains intimidating, and the beaches filled with fossils.
+              </p>
+
+              {/* Full-width break for Skye */}
+              <div className="travel-image-block">
+                <img
+                  src={sky}
+                  alt="Isle of Skye / rugged landscape"
+                  className="travel-image"
+                />
+              </div>
+
+              <p className="travel-p">
+                Escaping into a local café for refuge from the storm brought comfort, and before we knew it, we were timing our steps outside to avoid getting
+                too wet. On our last day there, we were lucky enough to have sunshine and explore a small town full of shops.
+              </p>
+
+              <p className="travel-p">
+                I bought a locally made snood, which to this day is the comfiest and softest scarf I own. I think next time I would love to return when the
+                weather is less fierce, but I would never trade those memories.
+              </p>
+
+              {/* Float image LEFT for Hogwarts train moment */}
+              <div className="travel-image-float">
+                <img src={island} alt="Jacobite steam train / Hogwarts vibes" />
+              </div>
+
+              <p className="travel-p">
+                Another highlight of the trip was seeing the famous Jacobite Steam Train — or, as I know it, the train that takes you to Hogwarts. Yes, the
+                train from Harry Potter. My inner child screamed.
+              </p>
+
+              <p className="travel-p">
+                We panicked at first, unsure where the best viewing spot was, and ended up waiting longer than expected because the train was late. But when
+                the steam filled the sky and the whistle echoed around us, I felt like I was ten again, watching the films for the first time.
+              </p>
+
+              <p className="travel-p">
+                Seeing the train pass by in real life is a memory I’ll never forget and sharing it with my fellow Potterhead family made it even more special.
+                I hope that one day I’ll be able to board it myself and fulfil that childhood dream of going to Hogwarts.
+              </p>
+
+              <p className="travel-p">
+                Although we were constantly moving and trying to pack a lot of sightseeing into one road trip, there was never a sense of rush or urgency.
+                The winding roads and fresh scent of nature reminded us to be present — not to prioritise postable images, but to be grounded and grateful.
+              </p>
+
+              <p className="travel-p">
+                Searching for warm showers at campsites and picking berries for something sweet only emphasised the importance of appreciating the small things,
+                like eating dinner together on camping chairs while trying not to get eaten alive by midges.
+              </p>
+
+              <p className="travel-p">These memories stay warm, true, and authentic every time I look back.</p>
+
+              {/* Photo grid stays (nice ending) */}
+              <div className="travel-image-grid" aria-label="Scotland photo grid">
+                <img src={cows} alt="Scotland memory 1" className="travel-image" />
+                <img src={carwindow} alt="Scotland memory 2" className="travel-image" />
+                <img src={vanlife} alt="Scotland memory 3" className="travel-image" />
+                <img src={morning} alt="Scotland memory 4" className="travel-image" />
+                <img src={berries} alt="Scotland memory 5" className="travel-image" />
+                <img src={wall} alt="Scotland memory 6" className="travel-image" />
+              </div>
+
+              <p className="travel-p">
+                Both trips will forever hold a special place in my heart, and I don’t think I’ll ever be able to choose which one I loved more.
+                Both made me fall in love with Scotland, and I think that’s the greatest gift any trip can give.
+              </p>
+
+              <p className="travel-p">
+                Whether it’s living more slowly and rooted, or constantly moving towards the next place, Scotland will always be somewhere I seek refuge from
+                the busy reality of life.
+              </p>
+
+              <p className="travel-p">
+                The memories I made are vastly different — not just because of the people and lifestyle, but because Scotland itself is so expansive.
+                Even though the terrain and castles may seem familiar, there is always a new perspective, a new feeling, or a new story waiting to be discovered.
+              </p>
+
+              <p className="travel-p">
+                There is a million ways to love Scotland, something for everyone, whether your cup of tea is cottages and living slow or van life and moving fast.
+                And besides, when does trying to find a big, mysterious monster ever get boring?
+              </p>
+            </section>
+          </article>
         </section>
 
-        {/* LOWER SECTIONS */}
-        <section className="travel-sections">
-          {/* Arrival & Transport */}
-          <article className="travel-section" style={{ '--delay': '800ms' }}>
-            <h2 className="travel-section-title">Arrival </h2>
-            <p>
-              Both times I went, we went by car. My first trip was to a
-              beautiful cottage by a loch... and the second was camping in a
-              van with my family. Both transport and stays I would never change.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={carwindow}
-                alt="Car window view in Scotland"
-                className="section-inline-image"
-              />
-            </div>
-            <p>
-              It gave me two different perspectives on Scotland - one settled in
-              a heated home and the other snuggled in my blankets.
-            </p>
-          </article>
-
-          {/* The little moments */}
-          <article className="travel-section" style={{ '--delay': '950ms' }}>
-            <h2 className="travel-section-title">The little moments</h2>
-            <p>
-              So many memories come paired with these trips. The first trip - I
-              spent with my partner. We saw a thick blanket of snow for the
-              first time in a long while, hiked the mountains to view the
-              sunset, and faced the harsh cold waters in a wild-waters dip. We
-              videoed our time spent, hoping to come back one day.
-            </p>
-            <p>
-              My second trip was filled with the laughter and love from my
-              family. My family&apos;s van trailed behind my aunt&apos;s camper
-              as we battled the harsh winds of Sky Island, made pit-stops to
-              feed Highlands cows, and ended nights with card games and dinners
-              together. Traveling together was such joy, reminding me how
-              grateful I am for my family.
-            </p>
-          </article>
-
-          {/* Favourite corners */}
-          <article className="travel-section" style={{ '--delay': '1100ms' }}>
-            <h2 className="travel-section-title">Sky Island</h2>
-            <p>
-              Sky island was beautiful. Although during the time we where there
-              it rained 90% of the time, the feel of being on a island with
-              barely any people was refreshing and relaxing.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={sky}
-                alt="Sky Island landscape"
-                className="section-inline-image"
-              />
-            </div>
-          </article>
-
-          {/* Hogwarts Train */}
-          <article className="travel-section" style={{ '--delay': '1250ms' }}>
-            <h2 className="travel-section-title">Hogwarts Train</h2>
-            <p>
-              Ever since I were a little girl, my household was always marked by
-              the famous movie series &apos;Harry Potter&apos;. And I myself was
-              obsessed by the series so seeing the original tracks and train
-              brought me back to youth.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={train}
-                alt="Hogwarts style train in Scotland"
-                className="section-inline-image"
-              />
-            </div>
-            <p>
-              The steam created clouds and the clatter of wheel and track and
-              honk filled the air. And then once again I also heard the Harry
-              Potter theme tune playing and little me itching in excitement for
-              the next adventure.
-            </p>
-          </article>
-
-          {/* Castles */}
-          <article className="travel-section" style={{ '--delay': '1400ms' }}>
-            <h2 className="travel-section-title">Castles</h2>
-            <p>
-              When I went with my partner for the first time, we spent a good
-              amount of our time there visiting the famous Scottish castles.
-              Whether they where renewed in a museum, or protected within the
-              woods... my jaw dropped at every corner. I was taken to every era
-              within Scottish heritage and history and it was fascinating.
-            </p>
-            <p>
-              I still remember standing facing a loch, the grand castle behind
-              me and my eyes looking out for the Lochness monster in front of
-              me. Of course, I did not see any monster... but I did see
-              extraordinary swords and armour, felt old mossy brick that still
-              hold up castle walls, and heard scottish history and folk lore.
-              Scotland won &apos;best castles&apos; for me!
-            </p>
-          </article>
-
-          {/* Next time I visit */}
-          <article className="travel-section" style={{ '--delay': '1550ms' }}>
-            <h2 className="travel-section-title">Next time I visit</h2>
-            <ul>
-              <li>Try traditional Haggis! - I was too scared last time</li>
-              <li>Hike up Ben Nevis</li>
-              <li>Perhaps book a seat WITHIN the famous Hogwarts Train</li>
-            </ul>
-            <p style={{ marginTop: '0.8rem' }}>
-              Scotland feels like the kind of place you return to in different
-              seasons and in different versions of yourself. I hope I will be able 
-              to go back there again.. It is one of those places that you could go for a 
-              holiday that does not actually feel like your typical holiday - motion-packed, 
-              chaotic and pressuring to have loads of fun. Scotland is a stress-free, 
-              effortless get away from the business of real life. It is a refuge into 
-              silence, clean-air, and magic... whether that is folk tails or harry potter, 
-              Scotland has something for everyone looking for some peace and quiet. 
-            </p>
-          </article>
-        </section>
-
-        {/* PHOTO GALLERY – divider + two big slanted photos */}
-        <section className="travel-gallery">
-          <div className="travel-gallery-grid">
-            <figure className="travel-gallery-item gallery-item-1">
-              <img
-                src={van}
-                alt="Family van parked in Scotland"
-                className="travel-gallery-image"
-              />
-            </figure>
-
-            <figure className="travel-gallery-item gallery-item-2">
-              <img
-                src={water}
-                alt="Mini waterfall in the Highlands"
-                className="travel-gallery-image"
-              />
-            </figure>
-          </div>
-        </section>
-
-        
+        <footer className="travel-footer">
+          <p>Tip: swap placeholders for real images and this post will instantly feel like a magazine feature.</p>
+        </footer>
       </div>
     </main>
   )

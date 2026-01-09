@@ -3,17 +3,18 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/TravelBlog.css'
 import travelPlaceholder from '../assets/profile.jpg'
+import train from '../assets/Scotland/train.jpg'
 
 const TRIPS = [
     {
     id: 'scotland',
     slug: 'scotland', // 🔗 links to /travel/scotland
-    title: 'Scotland trains & lochs',
+    title: 'Cottages to Van Life: Two Ways of Loving Scotland',
     location: 'Scotland',
-    date: 'Autumn 2025',
+  
     snippet:
-      'Rainy streets, hilltop views, long train routes and quiet lochs that feel like a painting.',
-    image: travelPlaceholder, // swap for a Scotland thumbnail later
+      'A comparison of two ways I visited Scotland : Living slowly, and moving fast. ',
+    image: train, // swap for a Scotland thumbnail later
   },
 
   
@@ -46,27 +47,6 @@ const TRIPS = [
     date: 'Spring 2026',
     snippet:
       'A few days of metro rides, café windows and getting lost between the river and side streets.',
-    image: travelPlaceholder,
-  },
-  
-  {
-    id: 'mallorca',
-    slug: 'mallorca',
-    title: 'COMING SOON: Mallorca',
-    location: 'Mallorca, Spain',
-    date: 'Coming soon',
-    snippet:
-      'Trip in planning – beaches, buses across the island and trying to catch winter sun.',
-    image: travelPlaceholder,
-  },
-  {
-    id: 'christmas-trip',
-    slug: 'christmas-trip',
-    title: 'UPCOMING: Christmas trip',
-    location: 'Central Europe',
-    date: 'Winter 2025',
-    snippet:
-      'Markets, trains, thermos tea and wandering through cities lit up with fairy lights.',
     image: travelPlaceholder,
   },
   {

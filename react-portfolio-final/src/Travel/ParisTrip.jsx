@@ -3,334 +3,165 @@ import { Link } from 'react-router-dom'
 import '../styles/TravelPost.css'
 import travelPlaceholder from '../assets/profile.jpg'
 
-export default function ParisTrip() {
+function LanternMark() {
   return (
-    <main className="travel-post-page paris-trip-page">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 2c2.8 0 5 2.2 5 5v2.1c0 .7.3 1.3.8 1.8l.5.5c.4.4.7 1 .7 1.6V17c0 2.2-1.8 4-4 4H9c-2.2 0-4-1.8-4-4v-2.9c0-.6.3-1.2.7-1.6l.5-.5c.5-.5.8-1.1.8-1.8V7c0-2.8 2.2-5 5-5Z"
+        fill="currentColor"
+        opacity="0.9"
+      />
+      <path
+        d="M9.2 7.2c.6-.8 1.5-1.2 2.8-1.2s2.2.4 2.8 1.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+      <path
+        d="M12 10.2c.9 1 .9 1.7 0 2.7c-.9-1-.9-1.7 0-2.7Z"
+        fill="#ffffff"
+        opacity="0.35"
+      />
+    </svg>
+  )
+}
+
+export default function ParisTrip() {
+  const pageClass = 'paris-trip-page'
+  const chips = ['Paris', 'City days', 'Spring 2026']
+
+  const title = 'Paris — light, metro, and getting lost on purpose'
+  const subtitle =
+    'A clean, editorial log: the mood, the rhythm, and the little details that made it feel cinematic.'
+  const heroCaption =
+    'Swap this hero to your strongest Paris photo (wide, clean composition).'
+
+  const heroImage = travelPlaceholder
+  const inlineImage = travelPlaceholder
+
+  const notes = [
+    { label: 'Vibe', value: 'Soft light, café windows, slow wandering' },
+    { label: 'Best moment', value: 'A small corner that felt like yours' },
+    { label: 'Soundtrack', value: 'A Paris song / album' },
+    { label: 'Next time', value: 'One thing you’d do slower' },
+  ]
+
+  return (
+    <main className={`travel-post-page ${pageClass}`}>
       <div className="travel-post-inner">
-        {/* 🗼 Doodles & Stickers for Clutter 🗼 */}
-        <div className="doodle-sticker doodle-1" style={{ '--delay': '200ms' }}>
-          🩷
-        </div>
-        <div className="doodle-sticker doodle-2" style={{ '--delay': '400ms' }}>
-          🎀
+        <div className="travel-topbar">
+          <Link to="/" className="travel-back">
+            ← Back to portfolio
+          </Link>
+
+          <div className="travel-meta">
+            {chips.map((chip) => (
+              <span key={chip} className="travel-chip">
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Top navigation + label */}
-        <header className="travel-post-top">
-          <Link to="/" className="travel-post-back">
-            🡐 Back to portfolio
-          </Link>
-          <p className="travel-post-chip-main">Travel journal · Spring 2026</p>
+        <header className="travel-header">
+          <div className="travel-kicker">
+            <LanternMark />
+            Travel Journal
+          </div>
+
+          <h1 className="travel-title">{title}</h1>
+          <p className="travel-subtitle">{subtitle}</p>
         </header>
 
-        {/* FUN HANDWRITTEN TITLE */}
-        <div
-          className="handwritten-title-box collage-piece"
-          style={{ '--delay': '100ms' }}
-        >
-          <h1 className="travel-post-title">PARISIAN DREAMING!</h1>
-        </div>
-
-        {/* ITINERARY TIMELINE */}
-        <section className="travel-itinerary">
-          <div className="travel-itinerary-header">
-            <h2 className="travel-itinerary-title">Itinerary at a glance</h2>
-            <p className="travel-itinerary-note">
-              Swap these notes later for your real days, places and tiny highlights.
-            </p>
-          </div>
-
-          <div className="travel-itinerary-timeline">
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 1 · Arrival</p>
-              <p className="travel-itinerary-text">
-                Train into the city, first metro ride, drop bags, wander along the
-                Seine and find a café for dinner.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 2 · Landmarks</p>
-              <p className="travel-itinerary-text">
-                Morning near the Eiffel Tower, afternoon in the Tuileries / Louvre
-                area, sunset walk by the river.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 3 · Neighbourhoods</p>
-              <p className="travel-itinerary-text">
-                Marais wandering, vintage shops, book stalls by the Bouquinistes
-                and a slow dinner somewhere tiny.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 4 · Slow morning</p>
-              <p className="travel-itinerary-text">
-                Long breakfast, sketching and writing, revisiting your favourite
-                corner from the trip before heading home.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* HERO COLLAGE */}
-        <section className="travel-collage">
-          <div className="collage-column collage-column-left">
-            {/* 1. Small rotated photo */}
-            <figure
-              className="collage-piece collage-photo small-shift"
-              style={{ '--delay': '300ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={travelPlaceholder}
-                  alt="Paris street detail"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Lunch by the Seine
-                </figcaption>
-              </div>
-            </figure>
-
-            {/* 2. Main Summary Note */}
-            <div
-              className="collage-piece torn-paper"
-              style={{ '--delay': '500ms' }}
-            >
-              <p className="travel-post-summary">
-                This trip felt like flipping through a charming, slightly chaotic
-                old photo album. Every corner was a photo op, and every day was a
-                chance to get lost on purpose. Key takeaways: always carry a
-                notebook, and the Parisian light really is magic.
-              </p>
-            </div>
-
-            {/* 3. Icons / Pills */}
-            <div
-              className="collage-piece collage-icons"
-              style={{ '--delay': '700ms' }}
-            >
-              <p className="collage-icons-label">TRIP SNAPSHOTS</p>
-              <ul className="trip-icon-list">
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🌍</span>
-                  <span className="trip-icon-text">Location · Paris</span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">📸</span>
-                  <span className="trip-icon-text">100+ photos</span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🥐</span>
-                  <span className="trip-icon-text">Croissant research</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="collage-column collage-column-right">
-            {/* 4. Large photo */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '400ms' }}
-            >
-              <div className="polaroid-frame">
-                <img
-                  src={travelPlaceholder}
-                  alt="Eiffel Tower from the park"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Eiffel Tower at sunset
-                </figcaption>
-              </div>
-            </figure>
-
-            {/* 5. Second photo */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '600ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={travelPlaceholder}
-                  alt="A bridge over the Seine"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Crossing Pont Neuf
-                </figcaption>
-              </div>
-            </figure>
-          </div>
-
-          {/* Extra overlapping photos */}
-          <div
-            className="extra-photo extra-photo-1 collage-piece"
-            style={{ '--delay': '650ms' }}
-          >
+        <section className="travel-hero">
+          <div className="travel-hero-frame">
             <img
-              src={travelPlaceholder}
-              alt="Close-up detail"
-              className="extra-photo-image"
+              src={heroImage}
+              alt="Paris trip hero"
+              className="travel-hero-image"
             />
           </div>
-
-          <div
-            className="extra-photo extra-photo-2 collage-piece"
-            style={{ '--delay': '750ms' }}
-          >
-            <img
-              src={travelPlaceholder}
-              alt="Metro ticket and notes"
-              className="extra-photo-image"
-            />
-          </div>
-
-          <div className="collage-doodle-line" />
+          <p className="travel-hero-caption">{heroCaption}</p>
         </section>
 
-        {/* MAIN SECTIONS */}
-        <section className="travel-sections">
-          {/* Arrival and Transport */}
-          <article className="travel-section" style={{ '--delay': '800ms' }}>
-            <h2 className="travel-section-title">Arrival and Transport</h2>
-            <p>
-              We arrived in Paris by train and quickly learned that the metro is
-              the true backbone of the city. After a few confused looks at the
-              map, the lines started to make sense and suddenly everywhere felt
-              reachable.
+        <section className="travel-body">
+          <article className="travel-article">
+            <p className="travel-intro">
+              Paris felt like an old film that somehow still moves fast — métro
+              lines, café stops, and streets that invite you to wander without a
+              plan.
             </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Train tickets and metro map"
-                style={{ maxWidth: '180px', transform: 'rotate(-2deg)' }}
-              />
-            </div>
-            <p>
-              I kept a little note of my most-used routes and stations – it made
-              the city feel smaller and more familiar each day.
-            </p>
+
+            <div className="travel-rule" />
+
+            <section className="travel-section">
+              <h2 className="travel-h2">The rhythm</h2>
+              <p className="travel-p">
+                A day in Paris: small breakfast, long walking, a museum or a
+                neighbourhood, and then a sunset that makes everything look
+                edited.
+              </p>
+
+              <div className="travel-quote">
+                <p>“The city feels best when you stop trying to do it properly.”</p>
+                <cite>— Field note</cite>
+              </div>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Where we wandered</h2>
+              <p className="travel-p">
+                Mention 2–4 areas and describe the mood in each. Keep it
+                magazine-like: light, texture, movement.
+              </p>
+
+              <div className="travel-image-block">
+                <img
+                  src={inlineImage}
+                  alt="Paris detail"
+                  className="travel-image"
+                />
+                <p className="travel-image-note">
+                  Detail photo idea: coffee cup, metro ticket, book stall, a
+                  balcony, a shadow on pavement.
+                </p>
+              </div>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Little moments</h2>
+              <p className="travel-p">
+                The accordion on a side street, the smell of bakeries, the way
+                the light sits on buildings in late afternoon.
+              </p>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Next time</h2>
+              <p className="travel-p">
+                One slow park day, one dance class, one evening that’s purely
+                unplanned.
+              </p>
+            </section>
           </article>
 
-          {/* The little moments */}
-          <article className="travel-section" style={{ '--delay': '950ms' }}>
-            <h2 className="travel-section-title">The little moments</h2>
-            <p>
-              The tiny things stood out the most – catching someone drawing in a
-              notebook on the metro, watching the light move across apartment
-              windows, or hearing an accordion on a quiet side street.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Notebook and pen on a café table"
-                style={{ maxWidth: '170px', transform: 'rotate(1.5deg)' }}
-              />
-            </div>
-            <p>
-              These are the memories that don’t fit in postcards but stay in my
-              head the longest.
-            </p>
-          </article>
-
-          {/* Favourite corners */}
-          <article className="travel-section" style={{ '--delay': '1100ms' }}>
-            <h2 className="travel-section-title">Favourite corners</h2>
-            <p>
-              Le Marais turned into one of my favourite areas – a maze of narrow
-              streets, hidden courtyards and small galleries that invited slow
-              wandering instead of rushing.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Narrow Paris street in Le Marais"
-                style={{ maxWidth: '190px', transform: 'rotate(-1deg)' }}
-              />
-            </div>
-            <p>
-              I also loved the paths along the Seine and the quieter parks where
-              locals read, sketched and just existed. Those corners felt like
-              real breathing spaces in the city.
-            </p>
-          </article>
-
-          {/* Food */}
-          <article className="travel-section" style={{ '--delay': '1250ms' }}>
-            <h2 className="travel-section-title">Food</h2>
-            <p>
-              Breakfast usually meant a pastry and coffee – simple but somehow
-              perfect every time. I kept trying to decide which bakery made the
-              best croissant and failed in the best way.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Coffee and pastry on a small table"
-                style={{ maxWidth: '180px', transform: 'rotate(2deg)' }}
-              />
-            </div>
-            <p>
-              From tiny café lunches to late-night snacks, the food became part
-              of the rhythm of the day rather than a big event.
-            </p>
-          </article>
-
-          {/* Highlights */}
-          <article className="travel-section" style={{ '--delay': '1400ms' }}>
-            <h2 className="travel-section-title">Highlights</h2>
-            <p>
-              Watching the Eiffel Tower appear between buildings, standing on a
-              bridge at sunset, and getting lost in streets we hadn’t planned to
-              walk down were some of my favourite moments.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Paris skyline at golden hour"
-                style={{ maxWidth: '190px', transform: 'rotate(-1.8deg)' }}
-              />
-            </div>
-            <p>
-              I loved the mix of big, famous sights and quiet, unplanned stops
-              that felt like they were just for us.
-            </p>
-          </article>
-
-          {/* Next Time I visit */}
-          <article className="travel-section" style={{ '--delay': '1550ms' }}>
-            <h2 className="travel-section-title">Next Time I visit</h2>
-            <ul>
-              <li>Spend a full day exploring Versailles properly.</li>
-              <li>Pack a picnic for Jardin du Luxembourg or another big park.</li>
-              <li>Take a Seine river cruise at golden hour.</li>
-              <li>Find a small local dance class or open studio session.</li>
+          <aside className="travel-aside">
+            <h3 className="travel-aside-title">Trip notes</h3>
+            <ul className="travel-aside-list">
+              {notes.map((item) => (
+                <li key={item.label} className="travel-aside-item">
+                  <span className="travel-aside-label">{item.label}</span>
+                  <p className="travel-aside-value">{item.value}</p>
+                </li>
+              ))}
             </ul>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="View over the city from a hill"
-                style={{ maxWidth: '170px', transform: 'rotate(1deg)' }}
-              />
-            </div>
-            <p style={{ marginTop: '0.8rem' }}>
-              Paris feels like a place you return to in different versions of
-              yourself – so this list is a promise to come back.
-            </p>
-          </article>
+          </aside>
         </section>
 
-        <footer className="travel-post-footer">
-          <p>
-            This layout keeps things light and scrapbooky, with a vertical
-            itinerary timeline, layered polaroids, extra photos and animated
-            doodles you can tweak per trip.
-          </p>
+        <footer className="travel-footer">
+          <p>Paris looks best with a strong hero image — swap that first.</p>
         </footer>
       </div>
     </main>

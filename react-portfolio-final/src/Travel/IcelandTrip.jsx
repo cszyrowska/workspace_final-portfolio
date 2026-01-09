@@ -1,323 +1,171 @@
 // src/Travel/IcelandTrip.jsx
 import { Link } from 'react-router-dom'
 import '../styles/TravelPost.css'
-import travelPlaceholder from '../assets/profile.jpg' // swap for real Iceland photos later
+import travelPlaceholder from '../assets/profile.jpg'
+
+function LanternMark() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 2c2.8 0 5 2.2 5 5v2.1c0 .7.3 1.3.8 1.8l.5.5c.4.4.7 1 .7 1.6V17c0 2.2-1.8 4-4 4H9c-2.2 0-4-1.8-4-4v-2.9c0-.6.3-1.2.7-1.6l.5-.5c.5-.5.8-1.1.8-1.8V7c0-2.8 2.2-5 5-5Z"
+        fill="currentColor"
+        opacity="0.9"
+      />
+      <path
+        d="M9.2 7.2c.6-.8 1.5-1.2 2.8-1.2s2.2.4 2.8 1.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+      <path
+        d="M12 10.2c.9 1 .9 1.7 0 2.7c-.9-1-.9-1.7 0-2.7Z"
+        fill="#ffffff"
+        opacity="0.35"
+      />
+    </svg>
+  )
+}
 
 export default function IcelandTrip() {
-  return (
-    <main className="travel-post-page iceland-trip-page">
-      <div className="travel-post-inner">
-        {/* Top navigation + label */}
-        <header className="travel-post-top">
-          <Link to="/" className="travel-post-back">
-            🡐 Back to portfolio
-          </Link>
-          <p className="travel-post-chip-main">Travel journal · Winter 2024</p>
-        </header>
+  const pageClass = 'iceland-trip-page'
+  const chips = ['Iceland', 'Wild landscapes', 'Trip journal']
 
-        {/* Title */}
-        <div
-          className="handwritten-title-box collage-piece"
-          style={{ '--delay': '100ms' }}
-        >
-          <h1 className="travel-post-title">ICELAND LIGHTS</h1>
+  const title = 'Iceland — ice air and quiet awe'
+  const subtitle =
+    'Clean notes, big horizons, and tiny details that made the days feel unreal.'
+  const heroCaption =
+    'Swap this for your best Iceland photo — a wide shot works beautifully.'
+
+  const heroImage = travelPlaceholder
+  const inlineImage = travelPlaceholder
+
+  const notes = [
+    { label: 'Vibe', value: 'Cold light, dramatic skies, calm' },
+    { label: 'Best moment', value: 'A view that made you go silent' },
+    { label: 'Soundtrack', value: 'A track you played on repeat' },
+    { label: 'Next time', value: 'Add one thing you’ll do differently' },
+  ]
+
+  return (
+    <main className={`travel-post-page ${pageClass}`}>
+      <div className="travel-post-inner">
+        <div className="travel-topbar">
+          <Link to="/" className="travel-back">
+            ← Back to portfolio
+          </Link>
+
+          <div className="travel-meta">
+            {chips.map((chip) => (
+              <span key={chip} className="travel-chip">
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* ITINERARY TIMELINE */}
-        <section className="travel-itinerary">
-          <div className="travel-itinerary-header">
-            <h2 className="travel-itinerary-title">Itinerary</h2>
-            <p className="travel-itinerary-note">
-              Swap these notes later for your real timings, routes and favourite
-              moments.
-            </p>
+        <header className="travel-header">
+          <div className="travel-kicker">
+            <LanternMark />
+            Travel Journal
           </div>
 
-          <div className="travel-itinerary-timeline">
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 1 · Reykjavík arrival
-              </p>
-              <p className="travel-itinerary-text">
-                Landing in the dark, neon buses, first glimpse of snow and a
-                quick walk around the city with clouds of breath in the air.
-              </p>
-            </div>
+          <h1 className="travel-title">{title}</h1>
+          <p className="travel-subtitle">{subtitle}</p>
+        </header>
 
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 2 · Golden Circle
-              </p>
-              <p className="travel-itinerary-text">
-                Þingvellir, geysers and a waterfall that felt like it was
-                roaring in slow motion. Lots of wool hats and steaming hands.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 3 · South coast & waterfalls
-              </p>
-              <p className="travel-itinerary-text">
-                Black sand beaches, wind that almost knocks you over and running
-                between Skógafoss and Seljalandsfoss with wet hair.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 4 · Pools & blue steam
-              </p>
-              <p className="travel-itinerary-text">
-                Hot pools while the air stays freezing, blue water, white
-                mountains and that heavy, sleepy feeling after swimming.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">
-                Day 5 · Last night & northern lights
-              </p>
-              <p className="travel-itinerary-text">
-                Watching the sky and hoping for green lines to appear, then
-                walking home on crunchy ice for the last time.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* HERO COLLAGE */}
-        <section className="travel-collage">
-          <div className="collage-column collage-column-left">
-            {/* Small polaroid */}
-            <figure
-              className="collage-piece collage-photo small-shift"
-              style={{ '--delay': '300ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={travelPlaceholder}
-                  alt="Reykjavík rooftops"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  First glimpse of Reykjavík
-                </figcaption>
-              </div>
-            </figure>
-
-            {/* Torn-paper summary */}
-            <div
-              className="collage-piece torn-paper"
-              style={{ '--delay': '500ms' }}
-            >
-              <p className="travel-post-summary">
-                This trip felt cold and bright at the same time: soft snow,
-                loud waterfalls, quiet streets and skies you have to keep
-                looking up at. A place where hot water, wool jumpers and big
-                silence became part of the routine.
-              </p>
-            </div>
-
-            {/* Pills */}
-            <div
-              className="collage-piece collage-icons"
-              style={{ '--delay': '700ms' }}
-            >
-              <p className="collage-icons-label">Trip snapshots</p>
-              <ul className="trip-icon-list">
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🇮🇸</span>
-                  <span className="trip-icon-text">
-                    Iceland · Reykjavík & south coast
-                  </span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">❄️</span>
-                  <span className="trip-icon-text">Winter layers</span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🌌</span>
-                  <span className="trip-icon-text">Northern lights chase</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="collage-column collage-column-right">
-            {/* Main polaroid */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '400ms' }}
-            >
-              <div className="polaroid-frame">
-                <img
-                  src={travelPlaceholder}
-                  alt="Icelandic waterfall"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Waterfall spray and frozen toes
-                </figcaption>
-              </div>
-            </figure>
-
-            {/* Second polaroid */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '600ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={travelPlaceholder}
-                  alt="Hot pool in winter"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Hot pool, cold air
-                </figcaption>
-              </div>
-            </figure>
-          </div>
-
-          {/* Overlapping mini photos */}
-          <div
-            className="extra-photo extra-photo-1 collage-piece"
-            style={{ '--delay': '650ms' }}
-          >
+        <section className="travel-hero">
+          <div className="travel-hero-frame">
             <img
-              src={travelPlaceholder}
-              alt="Iceland detail"
-              className="extra-photo-image"
+              src={heroImage}
+              alt="Iceland trip hero"
+              className="travel-hero-image"
             />
           </div>
-
-          <div
-            className="extra-photo extra-photo-2 collage-piece"
-            style={{ '--delay': '750ms' }}
-          >
-            <img
-              src={travelPlaceholder}
-              alt="Snow and lights"
-              className="extra-photo-image"
-            />
-          </div>
-
-          <div className="collage-doodle-line" />
+          <p className="travel-hero-caption">{heroCaption}</p>
         </section>
 
-        {/* LOWER SECTIONS */}
-        <section className="travel-sections">
-          {/* Arrival & Transport */}
-          <article className="travel-section" style={{ '--delay': '800ms' }}>
-            <h2 className="travel-section-title">Arrival &amp; transport</h2>
-            <p>
-              Airport buses into Reykjavík, trying to read signs in the dark
-              and working out how the local buses work with gloves on.
+        <section className="travel-body">
+          <article className="travel-article">
+            <p className="travel-intro">
+              Iceland felt like stepping into a different texture of the world —
+              sharper air, bigger silence, and landscapes that don’t look real
+              until you’re standing inside them.
             </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Bus and snowy street"
-                className="section-inline-image"
-              />
-            </div>
-            <p>
-              It quickly turned into a rhythm of: layers, bus, explore, hot
-              drink, repeat.
-            </p>
+
+            <div className="travel-rule" />
+
+            <section className="travel-section">
+              <h2 className="travel-h2">The rhythm</h2>
+              <p className="travel-p">
+                Write how the days flowed: early starts? road stops? slow cafés
+                between weather shifts? Keep it sensory and simple.
+              </p>
+
+              <div className="travel-quote">
+                <p>“The quiet here isn’t empty — it’s full.”</p>
+                <cite>— Field note</cite>
+              </div>
+
+              <p className="travel-p">
+                Add one practical memory: what you packed, what you learned
+                about moving around, what surprised you.
+              </p>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Where we wandered</h2>
+              <p className="travel-p">
+                List a few places but describe how they *felt*. Wind, mist,
+                colour, light, distance.
+              </p>
+
+              <div className="travel-image-block">
+                <img
+                  src={inlineImage}
+                  alt="Iceland detail"
+                  className="travel-image"
+                />
+                <p className="travel-image-note">
+                  Use a “detail” photo here: boots on gravel, hot drink, sea
+                  spray, fog on glass.
+                </p>
+              </div>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Little moments</h2>
+              <p className="travel-p">
+                Tiny scenes: a petrol station snack, the smell after rain, the
+                sound of water everywhere, a quick laugh in the cold.
+              </p>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Next time</h2>
+              <p className="travel-p">
+                One promise: come back slower, stay longer, chase one region
+                properly. Keep it short.
+              </p>
+            </section>
           </article>
 
-          {/* The little moments */}
-          <article className="travel-section" style={{ '--delay': '950ms' }}>
-            <h2 className="travel-section-title">The little moments</h2>
-            <p>
-              Fogged-up café windows, the sound of snow under boots, tiny
-              colourful houses against a grey sky and watching steam rise from
-              drains on cold mornings.
-            </p>
-            <p>
-              These small pieces of the day felt just as important as the big
-              landmarks.
-            </p>
-          </article>
-
-          {/* Favourite corners */}
-          <article className="travel-section" style={{ '--delay': '1100ms' }}>
-            <h2 className="travel-section-title">Favourite corners</h2>
-            <p>
-              A viewpoint over the city where the sea, mountains and roofs all
-              lined up in different shades of blue and white, and a quiet side
-              street with fairy lights and hardly any people.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="View over Reykjavík"
-                className="section-inline-image"
-              />
-            </div>
-            <p>
-              The south coast also felt like a long, changing corridor of
-              cliffs, beaches and villages.
-            </p>
-          </article>
-
-          {/* Food */}
-          <article className="travel-section" style={{ '--delay': '1250ms' }}>
-            <h2 className="travel-section-title">Food</h2>
-            <p>
-              Soups, bread, hot chocolate and anything that felt warm and
-              heavy. Simple food tasted extra good after being outside for
-              hours.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Soup and bread on a table"
-                className="section-inline-image"
-              />
-            </div>
-            <p>
-              Supermarket snacks also became part of the memory: skyr, pastries
-              and random things we picked up because the packaging looked cute.
-            </p>
-          </article>
-
-          {/* Highlights */}
-          <article className="travel-section" style={{ '--delay': '1400ms' }}>
-            <h2 className="travel-section-title">Highlights</h2>
-            <p>
-              Waterfalls in winter light, standing on a black beach with waves
-              that felt too big and seeing even a tiny hint of green in the
-              sky.
-            </p>
-            <p>
-              The mix of cold air and hot water made every day feel a bit like
-              a ritual.
-            </p>
-          </article>
-
-          {/* Next time I visit */}
-          <article className="travel-section" style={{ '--delay': '1550ms' }}>
-            <h2 className="travel-section-title">Next time I visit</h2>
-            <ul>
-              <li>Drive further east along the coast.</li>
-              <li>Spend more time in smaller towns away from Reykjavík.</li>
-              <li>Try a proper multi-day hike in summer.</li>
+          <aside className="travel-aside">
+            <h3 className="travel-aside-title">Trip notes</h3>
+            <ul className="travel-aside-list">
+              {notes.map((item) => (
+                <li key={item.label} className="travel-aside-item">
+                  <span className="travel-aside-label">{item.label}</span>
+                  <p className="travel-aside-value">{item.value}</p>
+                </li>
+              ))}
             </ul>
-            <p style={{ marginTop: '0.8rem' }}>
-              Iceland feels like somewhere you have to see in different
-              seasons, so this is just the first chapter.
-            </p>
-          </article>
+          </aside>
         </section>
 
-        <footer className="travel-post-footer">
-          <p>
-            When you have real Iceland photos and notes, just drop them into
-            this layout and let the page become your own scrapbook.
-          </p>
+        <footer className="travel-footer">
+          <p>Swap placeholders for real photos and this instantly looks finished.</p>
         </footer>
       </div>
     </main>

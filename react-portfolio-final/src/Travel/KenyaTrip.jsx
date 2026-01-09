@@ -1,281 +1,161 @@
 // src/Travel/KenyaTrip.jsx
 import { Link } from 'react-router-dom'
 import '../styles/TravelPost.css'
-import travelPlaceholder from '../assets/profile.jpg' // swap to real Kenya photos when you have them
+import travelPlaceholder from '../assets/profile.jpg'
+
+function LanternMark() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 2c2.8 0 5 2.2 5 5v2.1c0 .7.3 1.3.8 1.8l.5.5c.4.4.7 1 .7 1.6V17c0 2.2-1.8 4-4 4H9c-2.2 0-4-1.8-4-4v-2.9c0-.6.3-1.2.7-1.6l.5-.5c.5-.5.8-1.1.8-1.8V7c0-2.8 2.2-5 5-5Z"
+        fill="currentColor"
+        opacity="0.9"
+      />
+      <path
+        d="M9.2 7.2c.6-.8 1.5-1.2 2.8-1.2s2.2.4 2.8 1.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+      <path
+        d="M12 10.2c.9 1 .9 1.7 0 2.7c-.9-1-.9-1.7 0-2.7Z"
+        fill="#ffffff"
+        opacity="0.35"
+      />
+    </svg>
+  )
+}
 
 export default function KenyaTrip() {
-  return (
-    <main className="travel-post-page kenya-trip-page">
-      <div className="travel-post-inner">
-        {/* Top navigation + label */}
-        <header className="travel-post-top">
-          <Link to="/" className="travel-post-back">
-            🡐 Back to portfolio
-          </Link>
-          <p className="travel-post-chip-main">Travel journal · Winter 2026</p>
-        </header>
+  const pageClass = 'kenya-trip-page'
+  const chips = ['Kenya', 'Safari + coast', 'Summer 2023']
 
-        {/* Title */}
-        <div
-          className="handwritten-title-box collage-piece"
-          style={{ '--delay': '100ms' }}
-        >
-          <h1 className="travel-post-title">KENYA SUNSETS</h1>
+  const title = 'Kenya — sunset dust and soft ocean evenings'
+  const subtitle =
+    'A trip that changed my pace: early light, long roads, and colour everywhere.'
+  const heroCaption =
+    'Swap this hero image to a wide sunset, savannah, or coastline shot.'
+
+  const heroImage = travelPlaceholder
+  const inlineImage = travelPlaceholder
+
+  const notes = [
+    { label: 'Vibe', value: 'Warm air, big skies, golden hours' },
+    { label: 'Best moment', value: 'That one sunset you still see' },
+    { label: 'Soundtrack', value: 'A song you associate with the trip' },
+    { label: 'Next time', value: 'One place you’d return to first' },
+  ]
+
+  return (
+    <main className={`travel-post-page ${pageClass}`}>
+      <div className="travel-post-inner">
+        <div className="travel-topbar">
+          <Link to="/" className="travel-back">
+            ← Back to portfolio
+          </Link>
+
+          <div className="travel-meta">
+            {chips.map((chip) => (
+              <span key={chip} className="travel-chip">
+                {chip}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* ITINERARY TIMELINE */}
-        <section className="travel-itinerary">
-          <div className="travel-itinerary-header">
-            <h2 className="travel-itinerary-title">Itinerary</h2>
-            <p className="travel-itinerary-note">
-              Swap these notes later for your real timings, routes and highlights.
-            </p>
+        <header className="travel-header">
+          <div className="travel-kicker">
+            <LanternMark />
+            Travel Journal
           </div>
 
-          <div className="travel-itinerary-timeline">
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 1 · Nairobi arrival</p>
-              <p className="travel-itinerary-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Checked
-                into a tiny guesthouse, swapped currency and tried my first Kenyan
-                coffee.
-              </p>
-            </div>
+          <h1 className="travel-title">{title}</h1>
+          <p className="travel-subtitle">{subtitle}</p>
+        </header>
 
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 2 · Safari day</p>
-              <p className="travel-itinerary-text">
-                Early wake-up for a game drive. Saw shapes on the horizon slowly
-                turn into giraffes and elephants.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 3 · Village & market</p>
-              <p className="travel-itinerary-text">
-                Handmade jewellery, bright fabrics and children waving at the
-                camera everywhere.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 4 · Coast time</p>
-              <p className="travel-itinerary-text">
-                White sand beaches and turquoise water that looked totally unreal.
-              </p>
-            </div>
-
-            <div className="travel-itinerary-item">
-              <p className="travel-itinerary-day-label">Day 5 · Last sunrise</p>
-              <p className="travel-itinerary-text">
-                Woke up at 5am for one more sky full of pastel colours before the
-                flight home.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* HERO COLLAGE */}
-        <section className="travel-collage">
-          <div className="collage-column collage-column-left">
-            {/* Polaroid 1 */}
-            <figure
-              className="collage-piece collage-photo small-shift"
-              style={{ '--delay': '300ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={travelPlaceholder}
-                  alt="Safari jeep"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  First game drive
-                </figcaption>
-              </div>
-            </figure>
-
-            {/* Torn-paper summary */}
-            <div
-              className="collage-piece torn-paper"
-              style={{ '--delay': '500ms' }}
-            >
-              <p className="travel-post-summary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. This trip
-                felt like living inside a nature documentary – dusty roads, orange
-                sunsets and quiet moments watching the sky change.
-              </p>
-            </div>
-
-            {/* Pills */}
-            <div
-              className="collage-piece collage-icons"
-              style={{ '--delay': '700ms' }}
-            >
-              <p className="collage-icons-label">Trip snapshots</p>
-              <ul className="trip-icon-list">
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🌍</span>
-                  <span className="trip-icon-text">
-                    Kenya · Nairobi & coast
-                  </span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🦒</span>
-                  <span className="trip-icon-text">Safari mornings</span>
-                </li>
-                <li className="trip-icon-pill">
-                  <span className="trip-icon-emoji">🌅</span>
-                  <span className="trip-icon-text">Sunset chaser</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="collage-column collage-column-right">
-            {/* Main polaroid */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '400ms' }}
-            >
-              <div className="polaroid-frame">
-                <img
-                  src={travelPlaceholder}
-                  alt="Savannah view"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Golden hour over the savannah
-                </figcaption>
-              </div>
-            </figure>
-
-            {/* Second polaroid */}
-            <figure
-              className="collage-piece collage-photo"
-              style={{ '--delay': '600ms' }}
-            >
-              <div className="polaroid-frame small">
-                <img
-                  src={travelPlaceholder}
-                  alt="Beach view"
-                  className="polaroid-image"
-                />
-                <figcaption className="polaroid-caption">
-                  Quiet beach afternoon
-                </figcaption>
-              </div>
-            </figure>
-          </div>
-
-          {/* Overlapping mini photos – Kenya uses same system */}
-          <div
-            className="extra-photo extra-photo-1 collage-piece"
-            style={{ '--delay': '650ms' }}
-          >
+        <section className="travel-hero">
+          <div className="travel-hero-frame">
             <img
-              src={travelPlaceholder}
-              alt="Close-up detail"
-              className="extra-photo-image"
+              src={heroImage}
+              alt="Kenya trip hero"
+              className="travel-hero-image"
             />
           </div>
-
-          <div
-            className="extra-photo extra-photo-2 collage-piece"
-            style={{ '--delay': '750ms' }}
-          >
-            <img
-              src={travelPlaceholder}
-              alt="Another close-up detail"
-              className="extra-photo-image"
-            />
-          </div>
-
-          <div className="collage-doodle-line" />
+          <p className="travel-hero-caption">{heroCaption}</p>
         </section>
 
-        {/* LOWER SECTIONS */}
-        <section className="travel-sections">
-          {/* Arrival & Transport */}
-          <article className="travel-section" style={{ '--delay': '800ms' }}>
-            <h2 className="travel-section-title">Arrival &amp; Transport</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Airport
-              chaos, new currency and figuring out matatus and taxis.
+        <section className="travel-body">
+          <article className="travel-article">
+            <p className="travel-intro">
+              Kenya felt cinematic in the best way — not because of the big
+              moments alone, but because the small scenes were so vivid: dust in
+              the air, warm light, quiet laughter in the car.
             </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Transport in Kenya"
-                className="section-inline-image"
-              />
-            </div>
+
+            <div className="travel-rule" />
+
+            <section className="travel-section">
+              <h2 className="travel-h2">The rhythm</h2>
+              <p className="travel-p">
+                Safari mornings and slow afternoons. Write how the day moved:
+                early wake-ups, heat settling in, evenings softening into gold.
+              </p>
+
+              <div className="travel-quote">
+                <p>“The sky changed colour like it was doing it on purpose.”</p>
+                <cite>— Field note</cite>
+              </div>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Where we wandered</h2>
+              <p className="travel-p">
+                Describe places through texture: the road, the air, the sounds.
+                Keep it editorial — less “what we did”, more “what it felt like”.
+              </p>
+
+              <div className="travel-image-block">
+                <img src={inlineImage} alt="Kenya detail" className="travel-image" />
+                <p className="travel-image-note">
+                  Add a detail photo: jewellery, fabric, fruit, hands, sand.
+                </p>
+              </div>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Little moments</h2>
+              <p className="travel-p">
+                A look out the window. A market stall. The smell of grilled food.
+                A moment of being very small in a huge landscape.
+              </p>
+            </section>
+
+            <section className="travel-section">
+              <h2 className="travel-h2">Next time</h2>
+              <p className="travel-p">
+                Come back slower. Spend longer on the coast. Plan one extra day
+                that’s unstructured.
+              </p>
+            </section>
           </article>
 
-          {/* The little moments */}
-          <article className="travel-section" style={{ '--delay': '950ms' }}>
-            <h2 className="travel-section-title">The little moments</h2>
-            <p>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Kids waving at the bus, campfire stories and the sound of insects
-              at night.
-            </p>
-          </article>
-
-          {/* Favourite corners */}
-          <article className="travel-section" style={{ '--delay': '1100ms' }}>
-            <h2 className="travel-section-title">Favourite corners</h2>
-            <p>
-              Ut enim ad minim veniam, hidden viewpoints, roadside fruit stalls
-              and that one sunset spot we almost drove past.
-            </p>
-          </article>
-
-          {/* Food */}
-          <article className="travel-section" style={{ '--delay': '1250ms' }}>
-            <h2 className="travel-section-title">Food</h2>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate. Ugali, chapati,
-              grilled fish by the beach and endless fresh mango juice.
-            </p>
-            <div className="section-image-wrapper">
-              <img
-                src={travelPlaceholder}
-                alt="Food in Kenya"
-                className="section-inline-image"
-              />
-            </div>
-          </article>
-
-          {/* Highlights */}
-          <article className="travel-section" style={{ '--delay': '1400ms' }}>
-            <h2 className="travel-section-title">Highlights</h2>
-            <p>
-              Excepteur sint occaecat cupidatat non proident – sunrise safaris,
-              starry skies with zero light pollution, and the feeling of being
-              very small in a huge landscape.
-            </p>
-          </article>
-
-          {/* Next time I visit */}
-          <article className="travel-section" style={{ '--delay': '1550ms' }}>
-            <h2 className="travel-section-title">Next time I visit</h2>
-            <ul>
-              <li>Visit a different national park.</li>
-              <li>Spend more time on the coast.</li>
-              <li>Try a longer camping safari.</li>
+          <aside className="travel-aside">
+            <h3 className="travel-aside-title">Trip notes</h3>
+            <ul className="travel-aside-list">
+              {notes.map((item) => (
+                <li key={item.label} className="travel-aside-item">
+                  <span className="travel-aside-label">{item.label}</span>
+                  <p className="travel-aside-value">{item.value}</p>
+                </li>
+              ))}
             </ul>
-            <p style={{ marginTop: '0.8rem' }}>
-              Already mentally planning part two of this trip.
-            </p>
-          </article>
+          </aside>
         </section>
 
-        <footer className="travel-post-footer">
-          <p>
-            Swap the placeholder photos for real Kenya images whenever you’re
-            ready, and tweak the text to match your actual itinerary.
-          </p>
+        <footer className="travel-footer">
+          <p>Swap in your Kenya photos and this becomes instantly “magazine”.</p>
         </footer>
       </div>
     </main>
