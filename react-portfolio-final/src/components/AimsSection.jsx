@@ -5,13 +5,13 @@ const GOALS = [
   {
     id: 'dance',
     tag: 'Movement',
-    title: 'Train + grow as a dancer',
+    title: 'Inspire and support young dancers',
     blurb:
-      'Keep building strength, style and confidence — and stay close to the studio.',
+      'Help young dancers build confidence, develop their skills and enjoy expressing themselves through movement.',
     steps: [
-      'Train consistently and explore styles that feel like “me”.',
-      'Create and perform work (even if it’s small at first).',
-      'Stay connected to classes, workshops and community projects.',
+      'Support young dancers in developing strong foundations and confidence.',
+      'Create a positive, encouraging and inclusive learning environment.',
+      'Help dancers explore their creativity, performance skills and individual style.',
     ],
   },
   {

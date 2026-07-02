@@ -10,7 +10,7 @@ const CURRENT_WORK = [
     points: [
       'Design and develop websites using platforms such as WordPress and code editors like Visual StudioCode, adapting to diverse client needs and styles',
       'Perform weekly website maintenance across multiple platforms to ensure optimal performance, security, and content updates',
-      ' Contributed to data science competitions, including Kaggles Gemini Long Context Challenge, assisting in design and project presentation',
+      'Contributed to data science competitions, including Kaggles Gemini Long Context Challenge, assisting in design and project presentation',
       'Proactively attend workshops and meetings to stay updated on emerging tools and prepare for evolving tasks and responsibilities',
       'Lead brainstorming sessions and manage the creation of social media marketing materials and campaign visuals across various platforms',
     ],
@@ -26,7 +26,7 @@ const CURRENT_WORK = [
       'Assisting the lead teacher with demonstrations, class organisation and small practical tasks before and after sessions.',
     ],
   },
-  
+
 ]
 
 export default function CurrentWork() {
@@ -36,8 +36,8 @@ export default function CurrentWork() {
         <p className="current-work-label">Current work</p>
         <h2 className="current-work-heading">Current work</h2>
         <p className="current-work-intro">
-          Right now, my work sits mainly in two places: supporting young dancers
-          in the studio, and quietly building digital spaces for small teams and
+          Right now, my work sits mainly in two places: supporting young people
+          in a performance space and quietly building digital spaces for small teams and
           creatives.
         </p>
       </header>

@@ -31,7 +31,8 @@
 .about-layout {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem; /* Increased gap for more separation */
+  gap: 4.5rem;
+  /* Increased gap for more separation */
   align-items: center;
 }
 
@@ -40,7 +41,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 7rem; /* Increased horizontal gap */
+    gap: 7rem;
+    /* Increased horizontal gap */
   }
 }
 
@@ -54,9 +56,12 @@
 /* Globe wrapper - size + 3D flip */
 .globe-wrapper {
   position: relative;
-  width: 450px;  /* Bigger */
-  height: 450px; /* Bigger */
-  perspective: 1200px; /* enables 3D flip */
+  width: 450px;
+  /* Bigger */
+  height: 450px;
+  /* Bigger */
+  perspective: 1200px;
+  /* enables 3D flip */
 }
 
 /* Flip card structure */
@@ -109,8 +114,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px; /* Core size scaled up */
-  height: 300px; /* Core size scaled up */
+  width: 300px;
+  /* Core size scaled up */
+  height: 300px;
+  /* Core size scaled up */
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background:
@@ -190,14 +197,14 @@
 /* Generic location base */
 .globe-location {
   --angle: 0deg;
-  --distance: 200px; /* Increased base distance */
+  --distance: 200px;
+  /* Increased base distance */
 
   position: absolute;
   top: 50%;
   left: 50%;
   transform-origin: center;
-  transform: translate(-50%, -50%) rotate(var(--angle))
-    translateY(calc(var(--distance) * -1));
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(var(--distance) * -1));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,11 +230,9 @@
   width: 2px;
   height: 80px;
   margin-top: 2px;
-  background: linear-gradient(
-    to bottom,
-    rgba(240, 194, 123, 0.1),
-    rgba(240, 194, 123, 0.9)
-  );
+  background: linear-gradient(to bottom,
+      rgba(240, 194, 123, 0.1),
+      rgba(240, 194, 123, 0.9));
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
@@ -249,48 +254,60 @@
 
 /* Individual location angles / distances */
 .globe-location-uk {
-  --angle: -100deg; /* upper-left */
+  --angle: -100deg;
+  /* upper-left */
   --distance: 210px;
 }
 
 .globe-location-poland {
-  --angle: 50deg; /* upper-right */
+  --angle: 50deg;
+  /* upper-right */
   --distance: 180px;
 }
 
 .globe-location-france {
-  --angle: -5deg; /* slightly up-right */
+  --angle: -5deg;
+  /* slightly up-right */
   --distance: 150px;
 }
 
 .globe-location-spain {
-  --angle: 199deg; /* down-left */
+  --angle: 199deg;
+  /* down-left */
   --distance: 150px;
 }
 
 .globe-location-scotland {
-  --angle: -80deg; /* above/left of UK */
+  --angle: -80deg;
+  /* above/left of UK */
   --distance: 225px;
 }
 
 .globe-location-iceland {
-  --angle: -65deg; /* even further up-left */
+  --angle: -65deg;
+  /* even further up-left */
   --distance: 205px;
 }
 
 .globe-location-kenya {
-  --angle: 140deg; /* down-right area (Africa-ish) */
+  --angle: 140deg;
+  /* down-right area (Africa-ish) */
   --distance: 200px;
 }
+
+.globe-location-sea {
+  --angle: 110deg;
+  /* Asia area */
+  --distance: 210px;
+}
+
 
 
 /* Hover effect – glow on globe (still works when front is visible) */
 .globe-wrapper:hover .globe-location-line {
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 230, 190, 0.4),
-    rgba(255, 194, 95, 1)
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 230, 190, 0.4),
+      rgba(255, 194, 95, 1));
   box-shadow: 0 0 25px rgba(255, 194, 95, 0.7);
 }
 
@@ -338,11 +355,9 @@
   .globe-wrapper:hover .globe-location-label,
   .globe-wrapper:hover .globe-location-dot {
     animation: none !important;
-    background: linear-gradient(
-      to bottom,
-      rgba(240, 194, 123, 0.1),
-      rgba(240, 194, 123, 0.9)
-    );
+    background: linear-gradient(to bottom,
+        rgba(240, 194, 123, 0.1),
+        rgba(240, 194, 123, 0.9));
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
     transform: rotate(calc(var(--angle) * -1));
   }

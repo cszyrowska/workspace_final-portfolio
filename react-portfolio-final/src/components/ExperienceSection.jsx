@@ -2,7 +2,7 @@
 import '../styles/Experience.css'
 
 const EXPERIENCE = [
-    {
+  {
     id: 'barbican',
     role: 'Assistant Rebel Spokesperson',
     place: 'Barbican Theatre',
@@ -20,7 +20,7 @@ const EXPERIENCE = [
     summary:
       'Planned and carried out independent experiments based on scientific research, then wrote up findings in a clear, structured way.',
   },
-  
+
   {
     id: 'petesplace',
     role: 'Waitress and cleaner',

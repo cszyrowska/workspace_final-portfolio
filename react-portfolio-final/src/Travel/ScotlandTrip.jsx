@@ -377,7 +377,7 @@ export default function ScotlandTrip() {
         </section>
 
         <footer className="travel-footer">
-          <p>Tip: swap placeholders for real images and this post will instantly feel like a magazine feature.</p>
+          Look out for more blog posts on my travels, coming soon!
         </footer>
       </div>
     </main>

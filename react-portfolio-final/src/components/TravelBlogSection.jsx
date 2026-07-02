@@ -6,18 +6,18 @@ import travelPlaceholder from '../assets/profile.jpg'
 import train from '../assets/Scotland/train.jpg'
 
 const TRIPS = [
-    {
+  {
     id: 'scotland',
     slug: 'scotland', // 🔗 links to /travel/scotland
     title: 'Cottages to Van Life: Two Ways of Loving Scotland',
     location: 'Scotland',
-  
+
     snippet:
       'A comparison of two ways I visited Scotland : Living slowly, and moving fast. ',
     image: train, // swap for a Scotland thumbnail later
   },
 
-  
+
   {
     id: 'iceland',
     slug: 'iceland', // 🔗 links to /travel/iceland
@@ -28,7 +28,7 @@ const TRIPS = [
       'Snow, hot pools, black beaches and nights spent looking up at the sky.',
     image: travelPlaceholder, // swap for an Iceland thumbnail later
   },
-  
+
   {
     id: 'kenya',
     slug: 'kenya', // links to /travel/kenya
@@ -84,9 +84,8 @@ export default function TravelBlogSection() {
           Little journeys I don&apos;t want to forget.
         </h2>
         <p className="travel-blog-intro">
-          Swipe through these cards to open scrap-book style pages, where I can
-          pin photos, notes and the small details that made each place feel
-          different.
+          Swipe through these cards to open my blog posts. A space
+          where I can share the big and small moments that make up my travels.
         </p>
       </header>
 

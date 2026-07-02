@@ -9,7 +9,9 @@ const LOCATIONS = [
   { id: 'poland', label: 'Poland' },
   { id: 'france', label: 'France' },
   { id: 'spain', label: 'Spain / Canaries' }, // Now representing Spain and Canaries combined
-  { id: 'kenya', label: 'Kenya' },            // 🆕
+  { id: 'kenya', label: 'Kenya' },
+  { id: 'sea', label: 'South East Asia' },            // 🆕
+
 ]
 export default function AboutSection() {
   return (
@@ -17,7 +19,7 @@ export default function AboutSection() {
       <header className="about-header">
         <h2 className="about-heading">About me</h2>
         <p className="about-intro">
-          I&apos;m a designer and dancer who loves turning small details into
+          I&apos;m a designer who loves turning small details into
           stories &mdash; whether that&apos;s a movement phrase, a web layout,
           or a long bus ride to a new city.
         </p>
@@ -80,19 +82,18 @@ export default function AboutSection() {
         {/* Right: Side text */}
         <div className="about-side-copy">
           <p>
-            My name is Cecylia, a 18-year old creative who loves sitting 
-            at the crossroads of art and people. Currently taking a gap year, I 
-            love mixing cosy things with big dreams. My love for reading has 
-            turned me into a storyteller in my own right, my love for dance 
-            lets me pour that creativity into movement, and my love for learning 
+            My name is Cecylia, a 18-year old creative who loves sitting
+            at the crossroads of art and people. Currently taking a gap year, I
+            love mixing cosy things with big dreams. My love for reading has
+            turned me into a storyteller in my own right, and my love for learning
             keeps me constantly collecting new ideas to fold back into everything I do.
 
           </p>
           <p>
-            However, traveling has always had a special place in my heart. My travels 
-            have shaped who I am today, especially my Kenya trip in 2023, and are
-            the strongest force pushing me out of my comfort zone, stretching my 
-            worldview, and inspiring the way I live, learn and create. 
+            However, traveling has always had a special place in my heart. My travels
+            have shaped who I am today, like my Kenya trip in 2023, and are
+            the strongest force pushing me out of my comfort zone, stretching my
+            worldview, and inspiring the way I live, learn and create.
           </p>
         </div>
       </div>

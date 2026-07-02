@@ -128,6 +128,16 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
+                    <a href="#blog" className="passport-link">
+                      <span className="passport-main">
+                        travel blog
+                      </span>
+                      <span className="passport-sub">
+                        My biggest passion - travel. See where I have been and plan to go
+                      </span>
+                    </a>
+                  </li>
+                  <li>
                     <a href="#current-work" className="passport-link">
                       <span className="passport-main">
                         Current work and service
@@ -152,16 +162,6 @@ export default function Home() {
                       </span>
                       <span className="passport-sub">
                         Highlights so far and the dreams ahead.
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#blog" className="passport-link">
-                      <span className="passport-main">
-                        travel blog
-                      </span>
-                      <span className="passport-sub">
-                        My biggest passion - travel. See where I have been and plan to go
                       </span>
                     </a>
                   </li>
@@ -195,14 +195,16 @@ export default function Home() {
         {/* About me with globe */}
         <AboutSection />
 
+        {/* Travel blog – image cards linking to full trip pages */}
+        <TravelBlogSection />
+
         {/* Current work (only what you’re doing now) */}
         <CurrentWork />
  
         {/* Work experience timeline */}
         <ExperienceSection />
-{/* Travel blog – image cards linking to full trip pages */}
-        <TravelBlogSection />
-                {/* Aims & aspirations – interactive future routes */}
+
+        {/* Aims & aspirations – interactive future routes */}
         <AimsSection />
 
 
