@@ -64,14 +64,14 @@ export default function Intro({ onEnter, onFinish }) {
             Cecylia Szyrowska
           </h1>
           <p className="intro-text">
-            And my soft, glowy little corner of the internet
+            Prospective Psychology Student · Young Researcher · Youth Education Practitioner
           </p>
 
           <button className="intro-button" onClick={triggerEnter}>
             Enter portfolio
           </button>
 
-        
+
         </div>
       </main>
     </div>

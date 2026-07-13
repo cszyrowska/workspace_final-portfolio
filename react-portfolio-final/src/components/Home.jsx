@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/Home.css'
 import AboutSection from './AboutSection.jsx'
+import ResearchSection from './ResearchSection.jsx'
 import CurrentWork from './CurrentWork.jsx'
 import ExperienceSection from './ExperienceSection.jsx'
 import AimsSection from './AimsSection.jsx'
@@ -87,7 +88,7 @@ export default function Home() {
           {/* Left box: name + intro */}
           <section className="hero-card hero-card-main">
             <div className="hero-left">
-              <p className="hero-tagline">PORTFOLIO · 2025</p>
+              <p className="hero-tagline">PORTFOLIO</p>
 
               <div className="hero-name-row">
                 <CompassRose />
@@ -96,15 +97,16 @@ export default function Home() {
                     Cecylia Szyrowska
                   </h1>
                   <p className="hero-subtitle">
-                    Designer · Dancer · Explorer
+                    Prospective Psychology Student · Young Researcher · Youth Education Practitioner
                   </p>
                 </div>
               </div>
 
               <p className="hero-copy">
-                I weave stories through movement, visuals, and the web – blending
-                a love for travel, and thoughtful interaction
-                into everything I create.
+                I am a UK-educated Polish applicant with a strong interest in developmental,
+                clinical and forensic psychology. My experience combines academic research,
+                scientific communication and practical work supporting children through dance,
+                performance and education.
               </p>
 
               <div className="hero-meta">
@@ -169,16 +171,11 @@ export default function Home() {
                     <a href="#contact" className="passport-link">
                       <span className="passport-main">Contact</span>
                       <span className="passport-sub">
-                        Let&apos;s plan your next story.
+                        Get in touch, or view my socials
                       </span>
                     </a>
                   </li>
                 </ul>
-
-                <div className="passport-stamp-row">
-                  <span className="stamp-dot" />
-                  <span className="stamp-label">Open for collaborations!</span>
-                </div>
               </div>
             </div>
           </aside>
@@ -195,12 +192,15 @@ export default function Home() {
         {/* About me with globe */}
         <AboutSection />
 
+        {/* Research section */}
+        <ResearchSection />
+
         {/* Travel blog – image cards linking to full trip pages */}
         <TravelBlogSection />
 
         {/* Current work (only what you’re doing now) */}
         <CurrentWork />
- 
+
         {/* Work experience timeline */}
         <ExperienceSection />
 
@@ -208,7 +208,7 @@ export default function Home() {
         <AimsSection />
 
 
-               
+
 
         <ContactSection />
       </div>

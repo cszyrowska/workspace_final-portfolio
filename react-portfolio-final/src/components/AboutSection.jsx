@@ -19,9 +19,7 @@ export default function AboutSection() {
       <header className="about-header">
         <h2 className="about-heading">About me</h2>
         <p className="about-intro">
-          I&apos;m a designer who loves turning small details into
-          stories &mdash; whether that&apos;s a movement phrase, a web layout,
-          or a long bus ride to a new city.
+          I’m a prospective Psychology student and creative researcher interested in human behaviour, child development and the stories that shape who we become.
         </p>
       </header>
 
@@ -82,20 +80,29 @@ export default function AboutSection() {
         {/* Right: Side text */}
         <div className="about-side-copy">
           <p>
-            My name is Cecylia, a 18-year old creative who loves sitting
-            at the crossroads of art and people. Currently taking a gap year, I
-            love mixing cosy things with big dreams. My love for reading has
-            turned me into a storyteller in my own right, and my love for learning
-            keeps me constantly collecting new ideas to fold back into everything I do.
-
+            My name is Cecylia, an 18-year-old prospective Psychology student currently taking a gap year. My interests sit at the crossroads of psychology, creativity and people. Through academic research, scientific projects and working with children, I have developed a strong interest in how people learn, communicate and grow.
           </p>
           <p>
-            However, traveling has always had a special place in my heart. My travels
-            have shaped who I am today, like my Kenya trip in 2023, and are
-            the strongest force pushing me out of my comfort zone, stretching my
-            worldview, and inspiring the way I live, learn and create.
+            Travel has also played an important role in shaping who I am. Experiences such as my trip to Kenya in 2023 have pushed me beyond my comfort zone, broadened my understanding of different people and cultures, and continue to influence the way I live, learn and create.
           </p>
         </div>
+      </div>
+
+      <div className="about-cta-container">
+        <a href="#research" className="about-cta-btn" aria-label="Explore my research projects">
+          Explore my research
+        </a>
+        <a
+          href="/Cecylia-Szyrowska-CV.pdf"
+          download="Cecylia-Szyrowska-CV.pdf"
+          className="about-cta-btn"
+          aria-label="Download my CV as a PDF"
+        >
+          Download my CV
+        </a>
+        <a href="#contact" className="about-cta-btn" aria-label="Contact me">
+          Contact me
+        </a>
       </div>
     </section>
   )
