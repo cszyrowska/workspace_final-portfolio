@@ -2,7 +2,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/TravelBlog.css'
-import travelPlaceholder from '../assets/profile.jpg'
+import travelPlaceholder from '../assets/travel_coming_soon.png'
 import train from '../assets/Scotland/train.jpg'
 
 const TRIPS = [

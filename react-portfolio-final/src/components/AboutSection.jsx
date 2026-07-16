@@ -1,6 +1,6 @@
-// src/components/AboutSection.jsx
 import '../styles/About.css'
 import globeBackImage from '../assets/IMG_20251118_150728_778.jpg'
+import cvPdf from '../assets/cecylia_szyrowska_cv.pdf'
 
 const LOCATIONS = [
   { id: 'uk', label: 'United Kingdom' },
@@ -93,12 +93,13 @@ export default function AboutSection() {
           Explore my research
         </a>
         <a
-          href="/Cecylia-Szyrowska-CV.pdf"
-          download="Cecylia-Szyrowska-CV.pdf"
+          href={cvPdf}
+          target="_blank"
+          rel="noopener noreferrer"
           className="about-cta-btn"
-          aria-label="Download my CV as a PDF"
+          aria-label="View my CV"
         >
-          Download my CV
+          View my CV
         </a>
         <a href="#contact" className="about-cta-btn" aria-label="Contact me">
           Contact me
